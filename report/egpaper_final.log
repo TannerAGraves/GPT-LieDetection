@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2022.8.6)  5 DEC 2023 10:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2022.8.6)  8 DEC 2023 10:33
 entering extended mode
 **"c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/report/egpaper_final.tex"
 (c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/report/egpaper_final.tex
@@ -319,17 +319,17 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 ] (egpaper_final.bbl) [2] (egpaper_final.aux) ) 
 Here is how much of TeX's memory you used:
- 9221 strings out of 479334
- 132209 string characters out of 2868885
- 436682 words of memory out of 3000000
+ 9227 strings out of 479334
+ 132278 string characters out of 2868885
+ 439682 words of memory out of 3000000
  26510 multiletter control sequences out of 15000+200000
  429904 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,9n,88p,366b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
 {F:/Programmi/MikTeX/fonts/enc/dvips/base/8r.enc}<F:/Programmi/MikTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><F:/Programmi/MikTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><F:/Programmi/MikTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><F:/Programmi/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><F:/Programmi/MikTeX/fonts/type1/urw/courier/ucrr8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmb8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmr8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (2 pages, 102810 bytes).
+Output written on egpaper_final.pdf (2 pages, 105501 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
+ 72 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

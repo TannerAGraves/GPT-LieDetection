@@ -624,7 +624,6 @@ INPUT F:\Programmi\MikTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
 INPUT F:\Programmi\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT F:\Programmi\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT F:\Programmi\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
-INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\courier\pcrr7t.tfm
 INPUT F:\Programmi\MikTeX\fonts\vf\adobe\times\ptmb7t.vf
 INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Users\marco\AppData\Local\MiKTeX\pdftex\config\pdftex.map
@@ -640,8 +639,7 @@ INPUT F:\Programmi\MikTeX\fonts\vf\adobe\times\ptmr7t.vf
 INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT F:\Programmi\MikTeX\fonts\vf\adobe\times\ptmb.vf
 INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT F:\Programmi\MikTeX\fonts\vf\adobe\courier\pcrr7t.vf
-INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
+INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\courier\pcrr7t.tfm
 INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\times\ptmb7t.tfm
 INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\times\ptmr7t.tfm
 INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\times\ptmr7t.tfm
@@ -651,10 +649,12 @@ INPUT .\egpaper_final.bbl
 INPUT egpaper_final.bbl
 INPUT .\egpaper_final.bbl
 INPUT egpaper_final.bbl
-INPUT F:\Programmi\MikTeX\fonts\vf\adobe\times\ptmr7t.vf
-INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT F:\Programmi\MikTeX\fonts\vf\adobe\courier\pcrr7t.vf
+INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
 INPUT F:\Programmi\MikTeX\fonts\vf\adobe\times\ptmb7t.vf
 INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT F:\Programmi\MikTeX\fonts\vf\adobe\times\ptmr7t.vf
+INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT F:\Programmi\MikTeX\fonts\vf\adobe\times\ptmr7t.vf
 INPUT F:\Programmi\MikTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT F:\Programmi\MikTeX\fonts\vf\adobe\times\ptmr7t.vf

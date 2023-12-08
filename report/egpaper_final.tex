@@ -25,7 +25,7 @@
 \begin{document}
 
 %%%%%%%%% TITLE
-\title{Fine-Tuning GPT3 to Explore and Evaluate its Lie Detection Capabilities}
+\title{Truth or DeGPTion: Evaluating Lie Detection Capabilities of GPT-3.5 through Fine-Tuning on Personal Opinions, Autobiographical Memories, and Intentions}
 
 
 \author{
@@ -56,21 +56,56 @@ Claudio Palmeri \\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-This paper aims at evaluating the capabilities of GPT3 in the task of Lie Detection.
+This paper aims at evaluating the capabilities of GPT3.5 in the task of Lie Detection.
 This is done through the fine-tuning of GPT3 on three English-language datasets encompassing 
 personal opinions, autobiographical memories, and future intentions. 
 Fine-tuning of LLMs consists in adapting a pre-trained language model to a specific 
 task by further training the model on task-specific data, thereby 
 enhancing its ability to generate contextually relevant and coherent text in 
-line with the desired task objectives. In our case, the objective is to classify truth or deception.
+line with the desired task objectives. In our investigation, the objective is to 
+discern and classify instances of truth or deception.
 
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
 \section{Introduction}
+Multiple papers consistently show that the capability of humans to discern truth from deception
+is at chance level, there is a growing interest in employing Machine Learning methods, especially
+based on the Transformer Model, to more accurately predict the truthfullness of a statement.
+Indeed, the inherent pattern recognition capability of ML Models allows them to pick up subtle cues
+that humans just seem to miss. In this paper, we will use OpenAI's GPT-3.5 Large Language Model (LLM),
+performing benchmarks on the performance of the base model, and then on a GPT-3.5 model specifically
+fine-tuned on the Opinion Dataset (Deceptive Opinions), Memory Dataset (Hippocorpus) and Intention Dataset.
+
+
+\section{Methods}
+
+\subsection{Dataset Preprocessing}
+
+(Explain what has been done in the datasets notebook).
+
+\subsection{Experimental Setup: Scenarios}
+
+We first aggregated the three train and test sets from 
+Scenario 1 (explain what that is). Then we fine-tuned and tested the model 
+on those aggregated sets. This Scenario assesses 
+the capacity of the model to learn and generalize from 
+samples of truthful and deceptive narratives from multiple 
+contexts. 
 
 
 
+\subsection{GPT-3.5 Fine-Tuning Strategy}
+The datasets were formatted into JSON to align with the expected input format 
+of the OpenAI API, subsequently divided into training, validation, and test sets. 
+To manage computational costs judiciously, the model was trained on a subset of the dataset.
+The model was trained utilizing the OpenAI API, and its performance was assessed through 
+testing and comparison with GPT-3.5. Further experimentation was conducted to assess 
+the impact of engineering the system prompt on overall performance.
+
+\section{Results}
+
+\section{Discussion}
 
 
 
