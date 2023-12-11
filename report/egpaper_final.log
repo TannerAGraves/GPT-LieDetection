@@ -1,21 +1,24 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2022.8.6)  8 DEC 2023 10:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  11 DEC 2023 09:30
 entering extended mode
-**"c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/report/egpaper_final.tex"
-(c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/report/egpaper_final.tex
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18> xparse <2020-03-03> (F:\Programmi\MikTeX\tex/latex/base\article.cls
-Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-(F:\Programmi\MikTeX\tex/latex/base\size10.clo
-File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex"
+(c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24> (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count179
-\c@section=\count180
-\c@subsection=\count181
-\c@subsubsection=\count182
-\c@paragraph=\count183
-\c@subparagraph=\count184
-\c@figure=\count185
-\c@table=\count186
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -27,40 +30,40 @@ LaTeX Warning: You have requested package `eso-pic',
                but the package provides `everyshi'.
 
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-) (F:\Programmi\MikTeX\tex/latex/graphics\keyval.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
-)) (F:\Programmi\MikTeX\tex/latex/latex-tools\xspace.sty
+\KV@toks@=\toks16
+)) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 CVPR 8.5 x 11-Inch Proceedings Style `cvpr.sty'.
 \@ctmp=\skip49
 \@figindent=\skip50
-\cvprrulerbox=\box47
-\cvprrulercount=\count187
+\cvprrulerbox=\box50
+\cvprrulercount=\count193
 \cvprruleroffset=\dimen139
 \cv@lineheight=\dimen140
 \cv@boxheight=\dimen141
-\cv@tmpbox=\box48
-\cv@refno=\count188
-\cv@tot=\count189
-\cv@tmpc@=\count190
-\cv@tmpc=\count191
-) (F:\Programmi\MikTeX\tex/latex/psnfss\times.sty
+\cv@tmpbox=\box51
+\cv@refno=\count194
+\cv@tot=\count195
+\cv@tmpc@=\count196
+\cv@tmpc=\count197
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\times.sty
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
-) (F:\Programmi\MikTeX\tex/latex/graphics\epsfig.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/graphics\epsfig.sty
 Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
- (F:\Programmi\MikTeX\tex/latex/graphics\graphicx.sty
-Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
- (F:\Programmi\MikTeX\tex/latex/graphics\graphics.sty
-Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
- (F:\Programmi\MikTeX\tex/latex/graphics\trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (F:\Programmi\MikTeX\tex/latex/graphics-cfg\graphics.cfg
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
- (F:\Programmi\MikTeX\tex/latex/graphics-def\pdftex.def
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen142
@@ -68,171 +71,169 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 )
 \epsfxsize=\dimen144
 \epsfysize=\dimen145
-) (F:\Programmi\MikTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2020/09/23 v2.17i AMS math features
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-(F:\Programmi\MikTeX\tex/latex/amsmath\amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
- (F:\Programmi\MikTeX\tex/latex/amsmath\amsgen.sty
+(C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
+\@emptytoks=\toks17
 \ex@=\dimen146
-)) (F:\Programmi\MikTeX\tex/latex/amsmath\amsbsy.sty
+)) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen147
-) (F:\Programmi\MikTeX\tex/latex/amsmath\amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
 )
-\inf@bad=\count192
+\inf@bad=\count198
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count193
-\leftroot@=\count194
+\uproot@=\count199
+\leftroot@=\count266
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count195
-\DOTSCASE@=\count196
+\classnum@=\count267
+\DOTSCASE@=\count268
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box49
-\strutbox@=\box50
+\Mathstrutbox@=\box52
+\strutbox@=\box53
 \big@size=\dimen148
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count197
-\c@MaxMatrixCols=\count198
+\macc@depth=\count269
+\c@MaxMatrixCols=\count270
 \dotsspace@=\muskip16
-\c@parentequation=\count199
-\dspbrk@lvl=\count266
-\tag@help=\toks17
-\row@=\count267
-\column@=\count268
-\maxfields@=\count269
-\andhelp@=\toks18
+\c@parentequation=\count271
+\dspbrk@lvl=\count272
+\tag@help=\toks18
+\row@=\count273
+\column@=\count274
+\maxfields@=\count275
+\andhelp@=\toks19
 \eqnshift@=\dimen149
 \alignsep@=\dimen150
 \tagshift@=\dimen151
 \tagwidth@=\dimen152
 \totwidth@=\dimen153
 \lineht@=\dimen154
-\@envbody=\toks19
+\@envbody=\toks20
 \multlinegap=\skip52
 \multlinetaggap=\skip53
-\mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
-) (F:\Programmi\MikTeX\tex/latex/amsfonts\amssymb.sty
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (F:\Programmi\MikTeX\tex/latex/amsfonts\amsfonts.sty
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (F:\Programmi\MikTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2021-02-10 v7.00j Hypertext links for LaTeX
- (F:\Programmi\MikTeX\tex/generic/ltxcmds\ltxcmds.sty
+)) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-) (F:\Programmi\MikTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-) (F:\Programmi\MikTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (F:\Programmi\MikTeX\tex/generic/infwarerr\infwarerr.sty
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (F:\Programmi\MikTeX\tex/generic/kvsetkeys\kvsetkeys.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-) (F:\Programmi\MikTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (F:\Programmi\MikTeX\tex/generic/pdfescape\pdfescape.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (F:\Programmi\MikTeX\tex/latex/hycolor\hycolor.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (F:\Programmi\MikTeX\tex/latex/letltxmacro\letltxmacro.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (F:\Programmi\MikTeX\tex/latex/auxhook\auxhook.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (F:\Programmi\MikTeX\tex/latex/kvoptions\kvoptions.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen155
-\Hy@linkcounter=\count270
-\Hy@pagecounter=\count271
- (F:\Programmi\MikTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2021-02-10 v7.00j Hyperref: PDFDocEncoding definition (HO)
+\Hy@linkcounter=\count276
+\Hy@pagecounter=\count277
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (F:\Programmi\MikTeX\tex/latex/hyperref\hyperref-langpatches.def
-File: hyperref-langpatches.def 2021-02-10 v7.00j Hyperref: patches for babel languages
-) (F:\Programmi\MikTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-) (F:\Programmi\MikTeX\tex/generic/etexcmds\etexcmds.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count272
- (F:\Programmi\MikTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2021-02-10 v7.00j Hyperref: PDF Unicode definition (HO)
+\Hy@SavedSpaceFactor=\count278
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 4073.
-Package hyperref Info: Option `bookmarks' set `false' on input line 4073.
-Package hyperref Info: Hyper figures OFF on input line 4192.
-Package hyperref Info: Link nesting OFF on input line 4197.
-Package hyperref Info: Hyper index ON on input line 4200.
-Package hyperref Info: Plain pages OFF on input line 4207.
-Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4018.
+Package hyperref Info: Option `bookmarks' set `false' on input line 4018.
+Package hyperref Info: Hyper figures OFF on input line 4137.
+Package hyperref Info: Link nesting OFF on input line 4142.
+Package hyperref Info: Hyper index ON on input line 4145.
+Package hyperref Info: Plain pages OFF on input line 4152.
+Package hyperref Info: Backreferencing OFF on input line 4157.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks OFF on input line 4451.
-\c@Hy@tempcnt=\count273
- (F:\Programmi\MikTeX\tex/latex/url\url.sty
+Package hyperref Info: Bookmarks OFF on input line 4396.
+\c@Hy@tempcnt=\count279
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4804.
+LaTeX Info: Redefining \url on input line 4749.
 \XeTeXLinkMargin=\dimen156
- (F:\Programmi\MikTeX\tex/generic/bitset\bitset.sty
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (F:\Programmi\MikTeX\tex/generic/bigintcalc\bigintcalc.sty
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count274
+\Fld@menulength=\count280
 \Field@Width=\dimen157
 \Fld@charsize=\dimen158
-Package hyperref Info: Hyper figures OFF on input line 6075.
-Package hyperref Info: Link nesting OFF on input line 6080.
-Package hyperref Info: Hyper index ON on input line 6083.
-Package hyperref Info: backreferencing OFF on input line 6090.
-Package hyperref Info: Link coloring OFF on input line 6095.
-Package hyperref Info: Link coloring with OCG OFF on input line 6100.
-Package hyperref Info: PDF/A mode OFF on input line 6105.
-LaTeX Info: Redefining \ref on input line 6145.
-LaTeX Info: Redefining \pageref on input line 6149.
- (F:\Programmi\MikTeX\tex/latex/base\atbegshi-ltx.sty
-Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi package
-with kernel methods
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
+LaTeX Info: Redefining \ref on input line 6097.
+LaTeX Info: Redefining \pageref on input line 6101.
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
 )
-\Hy@abspage=\count275
-\c@Item=\count276
-\c@Hfootnote=\count277
+\Hy@abspage=\count281
+\c@Item=\count282
+\c@Hfootnote=\count283
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (F:\Programmi\MikTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2021-02-10 v7.00j Hyperref driver for pdfTeX
- (F:\Programmi\MikTeX\tex/latex/base\atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count278
-\c@bookmark@seq@number=\count279
- (F:\Programmi\MikTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+\Fld@listcount=\count284
+\c@bookmark@seq@number=\count285
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
- (F:\Programmi\MikTeX\tex/generic/uniquecounter\uniquecounter.sty
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
@@ -240,12 +241,12 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip54
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 25.
- (F:\Programmi\MikTeX\tex/latex/psnfss\ot1ptm.fd
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (F:\Programmi\MikTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count280
-\l__pdf_internal_box=\box51
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count286
+\l__pdf_internal_box=\box54
 ) (egpaper_final.aux)
 \openout1 = `egpaper_final.aux'.
 
@@ -267,69 +268,78 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
- ABD: EveryShipout initializing macros (F:\Programmi\MikTeX\tex/latex/graphics\color.sty
-Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
- (F:\Programmi\MikTeX\tex/latex/graphics-cfg\color.cfg
+ ABD: EveryShipout initializing macros (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: pdftex.def on input line 147.
-) (F:\Programmi\MikTeX\tex/context/base/mkii\supp-pdf.mkii
+Package color Info: Driver file: pdftex.def on input line 149.
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count281
+\scratchcounter=\count287
 \scratchdimen=\dimen159
-\scratchbox=\box52
-\nofMPsegments=\count282
-\nofMParguments=\count283
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count284
+\scratchbox=\box55
+\nofMPsegments=\count288
+\nofMParguments=\count289
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count290
 \MPscratchDim=\dimen160
-\MPnumerator=\count285
-\makeMPintoPDFobject=\count286
-\everyMPtoPDFconversion=\toks22
-) (F:\Programmi\MikTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+\MPnumerator=\count291
+\makeMPintoPDFobject=\count292
+\everyMPtoPDFconversion=\toks23
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-)
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
 Package hyperref Info: Link coloring OFF on input line 25.
- (F:\Programmi\MikTeX\tex/latex/hyperref\nameref.sty
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
- (F:\Programmi\MikTeX\tex/latex/refcount\refcount.sty
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (F:\Programmi\MikTeX\tex/generic/gettitlestring\gettitlestring.sty
+) (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count287
+\c@section@level=\count293
 )
 LaTeX Info: Redefining \ref on input line 25.
 LaTeX Info: Redefining \pageref on input line 25.
 LaTeX Info: Redefining \nameref on input line 25.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
- (F:\Programmi\MikTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
- (F:\Programmi\MikTeX\tex/latex/amsfonts\umsb.fd
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 55.
- (F:\Programmi\MikTeX\tex/latex/psnfss\ot1pcr.fd
+ (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [1{C:/Users/marco/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
+)
+Underfull \hbox (badness 2173) in paragraph at lines 106--110
+[]\OT1/ptm/m/n/10 Specifically, we no-ticed that the base-line GPT-3.5
+ []
+
+[1{C:/Users/marco/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 
-] (egpaper_final.bbl) [2] (egpaper_final.aux) ) 
+] [2] (egpaper_final.bbl) [3
+
+] (egpaper_final.aux) ) 
 Here is how much of TeX's memory you used:
- 9227 strings out of 479334
- 132278 string characters out of 2868885
- 439682 words of memory out of 3000000
- 26510 multiletter control sequences out of 15000+200000
- 429904 words of font info for 82 fonts, out of 3000000 for 9000
+ 9740 strings out of 478582
+ 154244 string characters out of 2844345
+ 448562 words of memory out of 3000000
+ 27753 multiletter control sequences out of 15000+600000
+ 495733 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,9n,88p,366b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
-{F:/Programmi/MikTeX/fonts/enc/dvips/base/8r.enc}<F:/Programmi/MikTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><F:/Programmi/MikTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><F:/Programmi/MikTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><F:/Programmi/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><F:/Programmi/MikTeX/fonts/type1/urw/courier/ucrr8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmb8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmr8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (2 pages, 105501 bytes).
+ 70i,9n,76p,383b,473s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on egpaper_final.pdf (3 pages, 117538 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 20 named destinations out of 1000 (max. 500000)
+ 86 PDF objects out of 1000 (max. 8388607)
+ 22 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

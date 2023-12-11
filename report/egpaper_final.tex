@@ -95,17 +95,68 @@ contexts.
 
 
 
-\subsection{GPT-3.5 Fine-Tuning Strategy}
+\subsection{GPT-3.5 Fine-Tuning}
 The datasets were formatted into JSON to align with the expected input format 
 of the OpenAI API, subsequently divided into training, validation, and test sets. 
-To manage computational costs judiciously, the model was trained on a subset of the dataset.
+To manage the potential high computational costs, the model was trained on a subset of the dataset.
 The model was trained utilizing the OpenAI API, and its performance was assessed through 
 testing and comparison with GPT-3.5. Further experimentation was conducted to assess 
 the impact of engineering the system prompt on overall performance.
 
+Specifically, we noticed that the baseline GPT-3.5 prefers giving verbose or indecisive answers.
+Verbose answers, that actually classify a statement as genuine or deceptive can be classified easily.
+Nonetheless, the model decides not to give a definitive answer when it thinks it does not have enough information to classify the statement.
+The following example shows this behaviour.
+
+\begin{verbatim}
+User: "Each and every abortion 
+is essentially a tragedy. The 
+potential mother will suffer 
+unforeseen consequences. Society
+as a whole will be deprived of 
+the potential it could have 
+received from the new life."
+
+   
+Baseline GPT-3.5: "There is no 
+objective truth to the statement 
+as it expresses subjective opinions
+and beliefs about abortion. It cannot 
+be definitively classified as 
+'True' or 'False'."
+\end{verbatim}   
+
+To address this issue it was necessary to engineer a system prompt that
+discourages this behaviour and adequately explains the task. This prompt
+is provided to the model at every example query, so instructions should
+be concise to minimize any token overhead that leads to increased cost of
+training and queries.
+
+\begin{verbatim}
+System Prompt to Fine-Tuned GPT-3.5:
+
+"You are an expert capable of
+discerning truthful from deceptive
+opinions based on speech patterns. 
+Definitively classify the following 
+statement as 'True' or 'False', 
+based on the likelihood the statement
+represents a genuinely held belief 
+or a deception."
+\end{verbatim}
+
+This issue is avoided in the fine-tuned models as the training process
+rewards our expected behaviour and output format.
+
+
+
 \section{Results}
 
 \section{Discussion}
+
+\section{Code Availability}
+The datasets used and all the code used for this project is available
+at the following \href{https://github.com/TannerAGraves/GPT-LieDetection/}{GitHub Repository}.
 
 
 
