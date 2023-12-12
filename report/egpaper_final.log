@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2022.8.6)  11 DEC 2023 09:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2022.8.6)  12 DEC 2023 18:26
 entering extended mode
 **"c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex"
 (c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex
@@ -303,40 +303,23 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 25.
 LaTeX Info: Redefining \pageref on input line 25.
 LaTeX Info: Redefining \nameref on input line 25.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
- (F:\Programmi\MikTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
- (F:\Programmi\MikTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 55.
- (F:\Programmi\MikTeX\tex/latex/psnfss\ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Underfull \hbox (badness 2173) in paragraph at lines 106--110
-[]\OT1/ptm/m/n/10 Specifically, we no-ticed that the base-line GPT-3.5
- []
 
-[1{C:/Users/marco/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
+c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex:25: I can't write on file `egpaper_final.pdf'.
+Please type another file name for output
+c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex:25: Emergency stop.
+<to be read again> 
+                   \edef 
+l.25 \begin{document}
+                     
+*** (job aborted, file error in nonstop mode)
 
-
-] (egpaper_final.bbl) [2
-
-] (egpaper_final.aux) ) 
+ 
 Here is how much of TeX's memory you used:
- 9201 strings out of 479334
- 132183 string characters out of 2868885
- 435638 words of memory out of 3000000
- 26496 multiletter control sequences out of 15000+200000
- 421824 words of font info for 66 fonts, out of 3000000 for 9000
+ 9073 strings out of 479334
+ 130271 string characters out of 2868885
+ 421445 words of memory out of 3000000
+ 26424 multiletter control sequences out of 15000+200000
+ 405135 words of font info for 30 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,9n,88p,383b,472s stack positions out of 5000i,500n,10000p,200000b,50000s
-{F:/Programmi/MikTeX/fonts/enc/dvips/base/8r.enc}<F:/Programmi/MikTeX/fonts/type1/urw/courier/ucrr8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmb8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmr8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (2 pages, 68663 bytes).
-PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 83i,1n,88p,383b,93s stack positions out of 5000i,500n,10000p,200000b,50000s
+c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex:25:  ==> Fatal error occurred, no output PDF file produced!

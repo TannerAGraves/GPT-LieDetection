@@ -57,7 +57,7 @@ Claudio Palmeri \\
 %%%%%%%%% ABSTRACT
 \begin{abstract}
 This paper aims at evaluating the capabilities of GPT3.5 in the task of Lie Detection.
-This is done through the fine-tuning of GPT3 on three English-language datasets encompassing 
+This is done through the fine-tuning of GPT-3.5 on three English-language datasets encompassing 
 personal opinions, autobiographical memories, and future intentions. 
 Fine-tuning of LLMs consists in adapting a pre-trained language model to a specific 
 task by further training the model on task-specific data, thereby 
@@ -82,22 +82,18 @@ fine-tuned on the Opinion Dataset (Deceptive Opinions), Memory Dataset (Hippocor
 
 \subsection{Dataset Preprocessing}
 
-(Explain what has been done in the datasets notebook).
 
-\subsection{Experimental Setup: Scenarios}
+The dataset was processed according to 'Scenario 3' of Loconte et al.\cite{Loconte}.
+In Scenario 3, aggregation was performed on the three train and test sets from Scenario 1 (opinions, memories, intentions), followed by fine-tuning the model on the aggregated sets. 
+This scenario evaluates the model's ability to classify truthful and deceptive statements across various contexts.
 
-We first aggregated the three train and test sets from 
-Scenario 1 (explain what that is). Then we fine-tuned and tested the model 
-on those aggregated sets. This Scenario assesses 
-the capacity of the model to learn and generalize from 
-samples of truthful and deceptive narratives from multiple 
-contexts. 
+Regarding the implementation of this process, the single datasets were merged into a single one after being cleaned. Then we divided it into training, validation and test set.
+It is worth noting that we did not use all the data on the initial dataset, this is because the training of a LLM was made simpler by using a smaller training dataset.
+Finally, the datasets were formatted into JSON to align with the expected input format of the OpenAI API.
 
 
 
 \subsection{GPT-3.5 Fine-Tuning}
-The datasets were formatted into JSON to align with the expected input format 
-of the OpenAI API, subsequently divided into training, validation, and test sets. 
 To manage the potential high computational costs, the model was trained on a subset of the dataset.
 The model was trained utilizing the OpenAI API, and its performance was assessed through 
 testing and comparison with GPT-3.5. Further experimentation was conducted to assess 
@@ -165,7 +161,7 @@ at the following \href{https://github.com/TannerAGraves/GPT-LieDetection/}{GitHu
 List and number all bibliographical references in 9-point Times,
 single-spaced, at the end of your paper. When referenced in the text,
 enclose the citation number in square brackets, for
-example~\cite{Authors14}.  Where appropriate, include the name(s) of
+example~\cite{Loconte}.  Where appropriate, include the name(s) of
 editors of referenced books.
 
 {\small

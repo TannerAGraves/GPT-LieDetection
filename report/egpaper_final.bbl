@@ -1,9 +1,8 @@
 \begin{thebibliography}{1}\itemsep=-1pt
 
-\bibitem{Authors14}
-Authors.
-\newblock The frobnicatable foo filter, 2014.
-\newblock Face and Gesture submission ID 324. Supplied as additional material
-  {\tt fg324.pdf}.
+\bibitem{Loconte}
+Loconte et al.
+\newblock Verbal lie detection using large language models.
+\newblock 2023.
 
 \end{thebibliography}
