@@ -75,8 +75,51 @@ based on the Transformer Model, to more accurately predict the truthfullness of 
 Indeed, the inherent pattern recognition capability of ML Models allows them to pick up subtle cues
 that humans just seem to miss. In this paper, we will use OpenAI's GPT-3.5 Large Language Model (LLM),
 performing benchmarks on the performance of the base model, and then on a GPT-3.5 model specifically
-fine-tuned on the Opinion Dataset (Deceptive Opinions), Memory Dataset (Hippocorpus) and Intention Dataset.
+fine-tuned on the Personal Opinion Dataset (Deceptive Opinions), Autobiographical Memories Dataset (Hippocorpus) and Future Intention Dataset.
 
+\subsection{Personal Opinion Dataset}
+
+The participants of this study were divided in 4 groups (HIT’s) and asked to provide either 
+a truthful or a deceptive opinion on the following topics: Abortion, Cannabis Legalization, Euthanasia, Gay Marriage, Policy on Migrants.
+An extract from the table is shown below.
+
+\begin{figure*}[h]
+    \includegraphics[scale=0.4]{img/pers_op_dataset.jpg}
+    \label{fig:personal_opinion_dataset}
+\end{figure*}
+
+\subsection{Autobiographical Memories Dataset}
+
+This dataset contains 6854 diary-like short stories about salient life events gathered in 3 steps from 2 groups of people (A,B).
+The study was conducted as following:
+
+\begin{itemize}
+    \item Stage 1: Group A writes 15-25 sentence truthful stories with a 2-3 sentence summary and a timeframe
+    \item Stage 2: Group B is tasked to write an imaginative story with the summary of group A as a prompt
+    \item Stage 3: After 2 months group A is asked to retell the story starting with their summary as a prompt
+\end{itemize}
+At the end a questionnaire was posed.
+
+\begin{figure*}[h]
+    \includegraphics[scale=0.4]{img/autobio_mem_dataset.jpg}
+    \label{fig:autobiographical_memories_dataset}
+\end{figure*}
+
+\subsection{Future Intention Dataset}
+
+The study from which this dataset was collected was conducted as following.
+
+All participants are divided into either the truthful or deceptful group.
+The former were asked to describe a non-work-related activity that would be doing in the next seven days answering the following questions:
+
+\begin{itemize}
+    \item Q1: “Please describe your activity as specific as possible”
+    \item Q2: “Which information can you give us to reassure us that you are telling the truth”
+\end{itemize}
+
+The latter were given 3 activities from the former group, asked which ones didn’t apply to them and get 
+randomly assigned one of those. After they were required to answer Q1, Q2 like the former group.
+At the end a questionnaire was posed.
 
 \section{Methods}
 
@@ -87,14 +130,18 @@ The dataset was processed according to 'Scenario 3' of Loconte et al.\cite{Locon
 In Scenario 3, aggregation was performed on the three train and test sets from Scenario 1 (opinions, memories, intentions), followed by fine-tuning the model on the aggregated sets. 
 This scenario evaluates the model's ability to classify truthful and deceptive statements across various contexts.
 
-Regarding the implementation of this process, the single datasets were merged into a single one after being cleaned. Then we divided it into training, validation and test set.
+Regarding the implementation of this process, the single datasets were merged into a single one after being cleaned and shuffled. Then we divided it into training, validation and test set.
 It is worth noting that we did not use all the data on the initial dataset, this is because the training of a LLM was made simpler by using a smaller training dataset.
 Finally, the datasets were formatted into JSON to align with the expected input format of the OpenAI API.
 
+In particular, the model was trained on two versions of the dataset:
 
+\begin{itemize}
+    \item a subset of the original dataset (Train: 210 examples; Validation: 45 examples; Test: 45 examples).
+    \item the full dataset (Train: 6765 examples; Validation: 1450 examples; Test: 1450 examples).
+\end{itemize}
 
 \subsection{GPT-3.5 Fine-Tuning}
-To manage the potential high computational costs, the model was trained on a subset of the dataset.
 The model was trained utilizing the OpenAI API, and its performance was assessed through 
 testing and comparison with GPT-3.5. Further experimentation was conducted to assess 
 the impact of engineering the system prompt on overall performance.
