@@ -69,24 +69,24 @@ discern and classify instances of truth or deception.
 
 %%%%%%%%% BODY TEXT
 \section{Introduction}
-Multiple papers consistently show that the capability of humans to discern truth from deception
-is at chance level, there is a growing interest in employing Machine Learning methods, especially
-based on the Transformer Model, to more accurately predict the truthfullness of a statement.
-Indeed, the inherent pattern recognition capability of ML Models allows them to pick up subtle cues
-that humans just seem to miss. In this paper, we will use OpenAI's GPT-3.5 Large Language Model (LLM),
-performing benchmarks on the performance of the base model, and then on a GPT-3.5 model specifically
-fine-tuned on the Personal Opinion Dataset (Deceptive Opinions), Autobiographical Memories Dataset (Hippocorpus) and Future Intention Dataset.
+Numerous academic publications consistently assert that the human capacity to discriminate 
+between veracity and deception rests at chance-level proficiency. Consequently, an escalating 
+interest has emerged in the application of machine learning (ML) methodologies, particularly 
+those rooted in the Transformer Model, to enhance the accuracy of truthfulness prediction for statements. 
+The intrinsic aptitude of ML models for pattern recognition empowers them to discern subtle cues 
+that elude human perception. This research endeavors to employ OpenAI's GPT-3.5 Large Language Model (LLM) 
+as the focal point, commencing with a comprehensive assessment of the base model's performance. Subsequently, 
+an in-depth examination will be conducted on a fine-tuned GPT-3.5 model, specifically calibrated using the 
+Personal Opinion Dataset (Deceptive Opinions), the Autobiographical Memories Dataset (Hippocorpus), and the 
+Future Intention Dataset.
 
 \subsection{Personal Opinion Dataset}
 
 The participants of this study were divided in 4 groups (HIT’s) and asked to provide either 
 a truthful or a deceptive opinion on the following topics: Abortion, Cannabis Legalization, Euthanasia, Gay Marriage, Policy on Migrants.
-An extract from the table is shown below.
+An extract from the table is shown below. \\
 
-\begin{figure*}[h]
-    \includegraphics[scale=0.4]{img/pers_op_dataset.jpg}
-    \label{fig:personal_opinion_dataset}
-\end{figure*}
+\includegraphics[scale=0.4]{img/pers_op_dataset.jpg}
 
 \subsection{Autobiographical Memories Dataset}
 
@@ -98,12 +98,9 @@ The study was conducted as following:
     \item Stage 2: Group B is tasked to write an imaginative story with the summary of group A as a prompt
     \item Stage 3: After 2 months group A is asked to retell the story starting with their summary as a prompt
 \end{itemize}
-At the end a questionnaire was posed.
+At the end a questionnaire was posed. \\
 
-\begin{figure*}[h]
-    \includegraphics[scale=0.4]{img/autobio_mem_dataset.jpg}
-    \label{fig:autobiographical_memories_dataset}
-\end{figure*}
+\includegraphics[scale=0.35]{img/autobio_mem_dataset.jpg}
 
 \subsection{Future Intention Dataset}
 
@@ -195,7 +192,21 @@ rewards our expected behaviour and output format.
 
 \section{Results}
 
+Firstly, we evaluated the non-fine-tuned GPT-3.5 model, achieving 71.1\% accuracy.
+After fine-tuning the 300 and 1500 model, we evaluated them in the same way.
+Both the '300 Model' and '1500 Model' achieved 82.2\% accuracy, showing a considerable
+improvement in performance. Moreover, the size difference in training example did not
+affect the accuracy whatsoever, showing that fine-tuning on a smaller dataset is a good
+option when training costs have to be minimized.
+
 \section{Discussion}
+
+Even though the baseline GPT-3.5 model is still capable of outperforming human capabilities, which
+are at chance level, by a solid margin, the fine tuning process improves performance by 11.1\% in terms
+of accuracy.
+
+After examining the performance by class we found that the '1500 Model' performs poorly on the Future
+Intentions Dataset, with a 69.7\% accuracy, which drags the overall performace down.
 
 \section{Code Availability}
 The datasets used and all the code used for this project is available
