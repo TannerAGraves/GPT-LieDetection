@@ -132,7 +132,7 @@ This scenario evaluates the model's ability to classify truthful and deceptive s
 
 Regarding the implementation of this process, the single datasets were merged into a single one after being cleaned and shuffled. Then we divided it into training, validation and test set.
 It is worth noting that we did not use all the data on the initial dataset, this is because the training of a LLM was made simpler by using a smaller training dataset.
-Finally, the datasets were formatted into JSON to align with the expected input format of the OpenAI API.
+Finally, the datasets were formatted into JSON to align with the expected input format of the OpenAI API. You can find the Python code in the \hyperref[sec:appendix]{Appendix} section of this paper.
 
 In particular, the model was trained on two versions of the dataset:
 
@@ -203,26 +203,124 @@ at the following \href{https://github.com/TannerAGraves/GPT-LieDetection/}{GitHu
 
 
 %-------------------------------------------------------------------------
-\section{References}
 
-List and number all bibliographical references in 9-point Times,
-single-spaced, at the end of your paper. When referenced in the text,
-enclose the citation number in square brackets, for
-example~\cite{Loconte}.  Where appropriate, include the name(s) of
-editors of referenced books.
 
 {\small
 \bibliographystyle{ieee_fullname}
 \bibliography{egbib}
 }
 
+\clearpage % Start a new page
+\onecolumn % Switch to one-column layout
 
 \section{Appendix}
- 
+\label{sec:appendix}
+
 \subsection{Python Code}
 
+The following code preprocesses the dataset according to Scenario 3.
+The original Python Notebook is located at the following \href{https://colab.research.google.com/github/TannerAGraves/GPT-LieDetection/blob/main/dataset/datasets.ipynb}{link} in our GitHub Repository
+
 \begin{verbatim}
-    This should be full width, 1 column
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+dc = pd.read_csv('DecOp_data_EN_500.csv', sep=',', encoding='UTF-8')
+
+d1 = []
+for i in range(dc.shape[0]):
+  row = dc.iloc[i]
+  d1.append({'ID': row['ID'],
+      'age' :row['age'], 'gender': row['gender'],
+  'sent' : row['A'].replace('\n', " ") ,
+  'labels'  : row['GT.A']})
+
+  d1.append({'ID': row['ID'],
+      'age' :row['age'], 'gender': row['gender'],
+  'sent' : row['E'].replace('\n', " ")  ,
+  'labels'  : row['GT.E']})
+  d1.append({'ID': row['ID'],
+      'age' :row['age'], 'gender': row['gender'],
+  'sent' : row['GM'].replace('\n', " ")  ,
+  'labels'  : row['GT.GM']})
+
+  d1.append({'ID': row['ID'],
+      'age' :row['age'], 'gender': row['gender'],
+  'sent' : row['Pom'].replace('\n', " ")  ,
+  'labels'  : row['GT.Pom']})
+
+  d1.append({'ID': row['ID'],
+      'age' :row['age'], 'gender': row['gender'],
+  'sent' : row['CL'].replace('\n', " ")  ,
+  'labels'  : row['GT.CL']})
+
+decop = pd.DataFrame.from_records(d1)
+
+decop = decop[['ID', 'sent', 'labels']]
+decop['type'] = 'A'
+
+decop
+
+hc = pd.read_csv('hcV3-stories.csv', sep=',', encoding='UTF-8')
+
+mem = hc[hc['memType']!='retold']
+mem = mem.dropna(subset=['story', 'memType'])
+mem = mem[['story', 'memType']]
+mem['memType'][mem['memType']=='recalled'] = 'T'
+mem['memType'][mem['memType']=='imagined'] = 'F'
+mem = mem.rename(columns={'story': 'sent', 'memType': 'labels'})
+mem['type'] = 'B'
+
+mem
+
+intent = pd.read_csv('sign_events_data_statements.csv', encoding="UTF-8")
+
+intent.loc[intent['outcome_class']=='t', 'outcome_class'] = 'T'
+intent.loc[intent['outcome_class']=='d', 'outcome_class'] = 'F'
+intent['q1'] = intent['q1'].apply(lambda x: x.replace('\n', ''))
+intent = intent.rename(columns={'q1': 'sent', 'outcome_class': 'labels'})
+intent = intent[['sent', 'labels']]
+intent['type'] = 'C'
+
+intent
+
+k = 300
+seed = 42
+
+'''
+shuffled_df = decop.sample(frac=0.1, random_state=seed).copy()
+sample_decop = shuffled_df.iloc[:k,].copy()
+sample_decop.drop('ID', axis=1, inplace=True)
+sample_decop
+
+data = pd.concat([sample_decop, mem.iloc[:k,].copy(), intent.iloc[:k,].copy()],
+                 ignore_index=True)
+'''
+
+decop.drop('ID', axis=1, inplace=True)
+
+data = pd.concat([decop, mem, intent], ignore_index=True)
+data_shuffle = data.sample(frac=1, random_state=seed+27).reset_index(drop=True)
+data_shuffle['labels'] = data_shuffle['labels'].map({'T': 1, 'F': 0})
+data_shuffle.rename(columns={'sent': 'text', 'labels': 'label', 'type': 'set'}, 
+                                                                        inplace=True)
+
+data_shuffle = data_shuffle.iloc[:k,]
+
+train_data, temp_data = train_test_split(data_shuffle, test_size=0.3, random_state=42)
+
+val_data, test_data = train_test_split(temp_data, test_size=0.5, random_state=42)
+
+train_data.to_json(f'train_data_{k}.json', orient='records', lines=True)
+
+val_data.to_json(f'val_data_{k}.json', orient='records', lines=True)
+
+test_data.to_json(f'test_data_{k}_class.json', orient='records', lines=True)
+
+data_shuffle.shape
+
+train_data.shape
 \end{verbatim}
 
 \end{document}

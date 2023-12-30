@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2022.8.6)  29 DEC 2023 11:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2022.8.6)  30 DEC 2023 10:03
 entering extended mode
 **"c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex"
 (c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex
@@ -345,21 +345,34 @@ Underfull \hbox (badness 2173) in paragraph at lines 149--153
 []\OT1/ptm/m/n/10 Specifically, we no-ticed that the base-line GPT-3.5
  []
 
-[2 <./img/pers_op_dataset.jpg> <./img/autobio_mem_dataset.jpg>] (egpaper_final.bbl) [3
+(egpaper_final.bbl [2 <./img/pers_op_dataset.jpg> <./img/autobio_mem_dataset.jpg>]) [3
 
-] (egpaper_final.aux) ) 
+] [4
+
+
+]
+Overfull \hbox (13.14375pt too wide) in paragraph at lines 324--324
+[]                                                                        \OT1/pcr/m/n/10 inplace=True)[] 
+ []
+
+
+Overfull \hbox (19.14375pt too wide) in paragraph at lines 324--324
+[]\OT1/pcr/m/n/10 train_data, temp_data = train_test_split(data_shuffle, test_size=0.3, random_state=42)[] 
+ []
+
+[5] (egpaper_final.aux) ) 
 Here is how much of TeX's memory you used:
- 9246 strings out of 479334
- 132970 string characters out of 2868885
- 436767 words of memory out of 3000000
- 26528 multiletter control sequences out of 15000+200000
+ 9248 strings out of 479334
+ 132987 string characters out of 2868885
+ 436805 words of memory out of 3000000
+ 26529 multiletter control sequences out of 15000+200000
  422138 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,9n,88p,383b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 83i,9n,88p,392b,470s stack positions out of 5000i,500n,10000p,200000b,50000s
 {F:/Programmi/MikTeX/fonts/enc/dvips/base/8r.enc}<F:/Programmi/MikTeX/fonts/type1/urw/courier/ucrr8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmb8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmr8a.pfb><F:/Programmi/MikTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (3 pages, 214526 bytes).
+Output written on egpaper_final.pdf (5 pages, 219922 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
+ 68 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
