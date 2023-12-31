@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex egpaper_final"] 1703953485 "egpaper_final.aux" "egpaper_final.bbl" "egpaper_final" 1703953491
+["bibtex egpaper_final"] 1704016103 "egpaper_final.aux" "egpaper_final.bbl" "egpaper_final" 1704016107
   "./ieee_fullname.bst" 1702281094 21040 72b73f4cb1c51eaa1a7af8ecad2b6bfb ""
   "egbib.bib" 1702401625 124 60541127ba246744751939f54a188c99 ""
-  "egpaper_final.aux" 1703953487 2600 a48adda9fcaf94b3072edb9a67f87345 "pdflatex"
+  "egpaper_final.aux" 1704016105 3085 9a86065010821e1dde7a3d8582f51b41 "pdflatex"
   (generated)
-  "egpaper_final.blg"
   "egpaper_final.bbl"
-["pdflatex"] 1703953485 "c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex" "egpaper_final.pdf" "egpaper_final" 1703953491
+  "egpaper_final.blg"
+["pdflatex"] 1704016103 "c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex" "egpaper_final.pdf" "egpaper_final" 1704016107
   "C:/Users/marco/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1659786319 9395662 0709e01a889549405c5c6c96e46e0589 ""
   "C:/Users/marco/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1702751650 371299 774334dadada47f5e46bd7edd7f1bf82 ""
   "F:/Programmi/MikTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -24,8 +24,10 @@
   "F:/Programmi/MikTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "F:/Programmi/MikTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "F:/Programmi/MikTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "F:/Programmi/MikTeX/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1233951854 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "F:/Programmi/MikTeX/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1233951854 928 2dc8d444221b7a635bb58038579b861a ""
   "F:/Programmi/MikTeX/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1233951854 908 2921f8a10601f252058503cc6570e581 ""
+  "F:/Programmi/MikTeX/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1233951854 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "F:/Programmi/MikTeX/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1233951854 940 228d6584342e91276bf566bcf9716b83 ""
   "F:/Programmi/MikTeX/fonts/tfm/public/cm/cmex10.tfm" 1136765053 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "F:/Programmi/MikTeX/fonts/tfm/public/cm/cmmi12.tfm" 1136765053 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -77,6 +79,7 @@
   "F:/Programmi/MikTeX/tex/latex/base/atbegshi-ltx.sty" 1610120746 2973 00085839f5881178c538db5970d3c38e ""
   "F:/Programmi/MikTeX/tex/latex/base/atveryend-ltx.sty" 1610120746 2596 b3a02e33035865e9f0457e064d436fb8 ""
   "F:/Programmi/MikTeX/tex/latex/base/size10.clo" 1610120746 8449 a72d5d4e612221b46000c3d71724e0ef ""
+  "F:/Programmi/MikTeX/tex/latex/booktabs/booktabs.sty" 1579093635 6253 f1cb470c9199e7110a27851508ed7a5c ""
   "F:/Programmi/MikTeX/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1580041542 14411 d1306dcf79a944f6988e688c1785f9ce ""
   "F:/Programmi/MikTeX/tex/latex/graphics-cfg/color.cfg" 1465890692 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "F:/Programmi/MikTeX/tex/latex/graphics-cfg/graphics.cfg" 1465890692 1224 978390e9c2234eab29404bc21b268d1e ""
@@ -105,16 +108,16 @@
   "F:/Programmi/MikTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "F:/Programmi/MikTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1575571282 9715 b051d5b493d9fe5f4bc251462d039e5f ""
   "F:/Programmi/MikTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex" 1703953481 13414 d0b3de547eafb0621cffb8dfa9c1a0e9 ""
+  "c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex" 1704016099 13968 6ab12ae540a1245a6ae022e4d4023c4b ""
   "cvpr.sty" 1702281094 8434 9c85e63bb1830fdefeac27370f229c9e ""
   "cvpr_eso.sty" 1702281094 3987 6aa7c08ff2621006e0603349e40a30a8 ""
-  "egpaper_final.aux" 1703953487 2600 a48adda9fcaf94b3072edb9a67f87345 "pdflatex"
-  "egpaper_final.bbl" 1703953485 181 41ecd2e44a4e9d8ce1d2a0de76df727b "bibtex egpaper_final"
-  "egpaper_final.tex" 1703953481 13414 d0b3de547eafb0621cffb8dfa9c1a0e9 ""
+  "egpaper_final.aux" 1704016105 3085 9a86065010821e1dde7a3d8582f51b41 "pdflatex"
+  "egpaper_final.bbl" 1704016103 181 41ecd2e44a4e9d8ce1d2a0de76df727b "bibtex egpaper_final"
+  "egpaper_final.tex" 1704016099 13968 6ab12ae540a1245a6ae022e4d4023c4b ""
   "eso-pic.sty" 1702281094 9727 d2935ae95b5cd343fcf5887ff530288d ""
   "img/autobio_mem_dataset.jpg" 1703843863 79202 d4c39141f8fb199130e54cb889541e01 ""
   "img/pers_op_dataset.jpg" 1703843268 61490 b71b43bd6ec0131a6e7a7438c67e3012 ""
   (generated)
-  "egpaper_final.log"
   "egpaper_final.aux"
+  "egpaper_final.log"
   "egpaper_final.pdf"

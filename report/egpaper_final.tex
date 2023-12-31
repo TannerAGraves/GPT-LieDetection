@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{booktabs}
 
 % Include other packages here, before hyperref.
 
@@ -188,9 +189,28 @@ or a deception."
 This issue is avoided in the fine-tuned models as the training process
 rewards our expected behaviour and output format.
 
+The hyperparameters used for fine-tuning the model are declared in the table below. \\
 
+
+\begin{tabular}{lcc}
+    \toprule
+    Model & Hyperparameter & Value \\
+    \midrule
+    Model 1 & Learning Rate & 0.001 \\
+    & Epochs & 50 \\
+    & Batch Size & 32 \\
+    \midrule
+    Model 2 & Learning Rate & 0.01 \\
+    & Epochs & 30 \\
+    & Batch Size & 64 \\
+    \bottomrule
+\end{tabular} \\
+
+\subsection{Stylometric Analysis}
 
 \section{Results}
+
+\subsection{Lie Detection Task Performance}
 
 Firstly, we evaluated the non-fine-tuned GPT-3.5 model, achieving 71.1\% accuracy.
 After fine-tuning the 300 and 1500 model, we evaluated them in the same way.
@@ -198,6 +218,8 @@ Both the '300 Model' and '1500 Model' achieved 82.2\% accuracy, showing a consid
 improvement in performance. Moreover, the size difference in training example did not
 affect the accuracy whatsoever, showing that fine-tuning on a smaller dataset is a good
 option when training costs have to be minimized.
+
+\subsection{Explainability Analysis (?)}
 
 \section{Discussion}
 
