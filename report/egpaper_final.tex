@@ -79,7 +79,7 @@ that elude human perception. This research endeavors to employ OpenAI's GPT-3.5 
 as the focal point, commencing with a comprehensive assessment of the base model's performance. Subsequently, 
 an in-depth examination will be conducted on a fine-tuned GPT-3.5 model, specifically calibrated using the 
 Personal Opinion Dataset (Deceptive Opinions), the Autobiographical Memories Dataset (Hippocorpus), and the 
-Future Intention Dataset.
+Future Intention Dataset. \\
 
 \subsection{Personal Opinion Dataset}
 
@@ -87,7 +87,7 @@ The participants of this study were divided in 4 groups (HIT’s) and asked to p
 a truthful or a deceptive opinion on the following topics: Abortion, Cannabis Legalization, Euthanasia, Gay Marriage, Policy on Migrants.
 An extract from the table is shown below. \\
 
-\includegraphics[scale=0.4]{img/pers_op_dataset.jpg}
+\includegraphics[scale=0.4]{img/pers_op_dataset.jpg} \\
 
 \subsection{Autobiographical Memories Dataset}
 
@@ -101,7 +101,7 @@ The study was conducted as following:
 \end{itemize}
 At the end a questionnaire was posed. \\
 
-\includegraphics[scale=0.35]{img/autobio_mem_dataset.jpg}
+\includegraphics[scale=0.35]{img/autobio_mem_dataset.jpg} \\
 
 \subsection{Future Intention Dataset}
 
@@ -117,7 +117,9 @@ The former were asked to describe a non-work-related activity that would be doin
 
 The latter were given 3 activities from the former group, asked which ones didn’t apply to them and get 
 randomly assigned one of those. After they were required to answer Q1, Q2 like the former group.
-At the end a questionnaire was posed.
+At the end a questionnaire was posed. \\
+
+\includegraphics[scale=0.65]{img/future_intentions_dataset.jpg} \\
 
 \section{Methods}
 
@@ -137,7 +139,7 @@ In particular, the model was trained on two versions of the dataset:
 \begin{itemize}
     \item a subset of the original dataset (Train: 210 examples; Validation: 45 examples; Test: 45 examples).
     \item the full dataset (Train: 6765 examples; Validation: 1450 examples; Test: 1450 examples).
-\end{itemize}
+\end{itemize} \\
 
 \subsection{GPT-3.5 Fine-Tuning}
 The model was trained utilizing the OpenAI API, and its performance was assessed through 
@@ -229,6 +231,19 @@ of accuracy.
 
 After examining the performance by class we found that the '1500 Model' performs poorly on the Future
 Intentions Dataset, with a 69.7\% accuracy, which drags the overall performace down.
+
+\section{TO DO}
+To do list (+ things we might do that the Loconte paper mentions)
+
+\begin{itemize}
+    \item fine tuning explaination
+    \item cross-validation on smaller model (so we are in the same setting as Loconte, even if it might cost a bit more)
+    \item rerunning performance 3 times for statistical significance (mean +/- 0.x)
+    \item training hyperparams (see table)
+    \item stylometric analysis if possible (see supplemental file at end of loconte paper)
+    \item better discussion, seems to lack a bit (if there are interesting considerations to be made)
+    \item any idea why future intention dataset has lower accuracy?
+\end{itemize}
 
 \section{Code Availability}
 The datasets used and all the code used for this project is available
