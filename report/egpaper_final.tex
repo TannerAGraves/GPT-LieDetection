@@ -79,7 +79,7 @@ that elude human perception. This research endeavors to employ OpenAI's GPT-3.5 
 as the focal point, commencing with a comprehensive assessment of the base model's performance. Subsequently, 
 an in-depth examination will be conducted on a fine-tuned GPT-3.5 model, specifically calibrated using the 
 Personal Opinion Dataset (Deceptive Opinions), the Autobiographical Memories Dataset (Hippocorpus), and the 
-Future Intention Dataset. \\
+Future Intentions Dataset. \\
 
 \subsection{Personal Opinion Dataset}
 
@@ -87,7 +87,9 @@ The participants of this study were divided in 4 groups (HIT’s) and asked to p
 a truthful or a deceptive opinion on the following topics: Abortion, Cannabis Legalization, Euthanasia, Gay Marriage, Policy on Migrants.
 An extract from the table is shown below. \\
 
-\includegraphics[scale=0.4]{img/pers_op_dataset.jpg} \\
+\begin{center}
+\includegraphics[scale=0.5]{img/pers_op_dataset.jpg} \\
+\end{center}
 
 \subsection{Autobiographical Memories Dataset}
 
@@ -101,9 +103,11 @@ The study was conducted as following:
 \end{itemize}
 At the end a questionnaire was posed. \\
 
-\includegraphics[scale=0.35]{img/autobio_mem_dataset.jpg} \\
+\begin{center}
+\includegraphics[scale=0.45]{img/autobio_mem_dataset.jpg} \\
+\end{center}
 
-\subsection{Future Intention Dataset}
+\subsection{Future Intentions Dataset}
 
 The study from which this dataset was collected was conducted as following.
 
@@ -121,6 +125,8 @@ At the end a questionnaire was posed. \\
 
 \includegraphics[scale=0.65]{img/future_intentions_dataset.jpg} \\
 
+In total, the Future Intentions Dataset is comprised of 1640 examples.
+
 \section{Methods}
 
 \subsection{Dataset Preprocessing}
@@ -128,7 +134,9 @@ At the end a questionnaire was posed. \\
 
 The dataset was processed according to 'Scenario 3' of Loconte et al.\cite{Loconte}.
 In Scenario 3, aggregation was performed on the three train and test sets from Scenario 1 (opinions, memories, intentions), followed by fine-tuning the model on the aggregated sets. 
-This scenario evaluates the model's ability to classify truthful and deceptive statements across various contexts.
+This scenario evaluates the model's overrall ability to simultaneously classify truthful and deceptive statements across various contexts, without fine tuning the model
+specifically to one single type of statement. That is to say, the goal is to evaluate the one model on opinions, memories and future intentions indistinctly, treating them just as a randomly shuffled
+set of statements to be classified as truthful or deceptive.
 
 Regarding the implementation of this process, the single datasets were merged into a single one after being cleaned and shuffled. Then we divided it into training, validation and test set.
 It is worth noting that we did not use all the data on the initial dataset, this is because the training of a LLM was made simpler by using a smaller training dataset.
@@ -191,22 +199,34 @@ or a deception."
 This issue is avoided in the fine-tuned models as the training process
 rewards our expected behaviour and output format.
 
-The hyperparameters used for fine-tuning the model are declared in the table below. \\
+The hyperparameters used for fine-tuning the model are declared in the table below, together with the
+fine-tuning training loss over the steps. \\
+
+\begin{center}
+
+    \begin{tabular}{ccc}
+        \toprule
+        Model & Hyperparameter & Value \\
+        \midrule
+        Model 1 & Learning Rate & 0.001 \\
+        & Epochs & 50 \\
+        & Batch Size & 32 \\
+        \midrule
+        Model 2 & Learning Rate & 0.01 \\
+        & Epochs & 30 \\
+        & Batch Size & 64 \\
+        \bottomrule
+    \end{tabular} \\
+
+\end{center}
+
+\includegraphics*[scale=0.55]{img/training_loss.png} \\
 
 
-\begin{tabular}{lcc}
-    \toprule
-    Model & Hyperparameter & Value \\
-    \midrule
-    Model 1 & Learning Rate & 0.001 \\
-    & Epochs & 50 \\
-    & Batch Size & 32 \\
-    \midrule
-    Model 2 & Learning Rate & 0.01 \\
-    & Epochs & 30 \\
-    & Batch Size & 64 \\
-    \bottomrule
-\end{tabular} \\
+10-fold cross validation is a practice to be talked about carefully when it comes to experiments with cost constraints.
+Indeed, such validation becomes very expensive, since OpenAI API calls are charged with a fee.
+(To be decided if we want to do this or not). To keep costs low, we decided to perform 10-fold cross validation only on
+the smaller model. Of course tough, we would expect a slightly better performance using the full model. (Also explain)
 
 \subsection{Stylometric Analysis}
 
@@ -242,7 +262,7 @@ To do list (+ things we might do that the Loconte paper mentions)
     \item training hyperparams (see table)
     \item stylometric analysis if possible (see supplemental file at end of loconte paper)
     \item better discussion, seems to lack a bit (if there are interesting considerations to be made)
-    \item any idea why future intention dataset has lower accuracy?
+    \item any idea why the Future Intentions Dataset has lower accuracy?
 \end{itemize}
 
 \section{Code Availability}
@@ -264,7 +284,7 @@ at the following \href{https://github.com/TannerAGraves/GPT-LieDetection/}{GitHu
 \section{Appendix}
 \label{sec:appendix}
 
-\subsection{Python Code}
+\subsection{Python Code: Scenario 3 Dataset Preprocessing}
 
 The following code preprocesses the dataset according to Scenario 3.
 The original Python Notebook is located at the following \href{https://colab.research.google.com/github/TannerAGraves/GPT-LieDetection/blob/main/dataset/datasets.ipynb}{link} in our GitHub Repository
@@ -369,6 +389,224 @@ test_data.to_json(f'test_data_{k}_class.json', orient='records', lines=True)
 data_shuffle.shape
 
 train_data.shape
+\end{verbatim}
+
+\subsection{Python Code: GPT-3 Fine-Tuning}
+
+The following code fine-tunes GPT-3 using the official OpenAI APIs.
+The original Python Notebook is located at the following \href{https://colab.research.google.com/github/TannerAGraves/GPT-LieDetection/blob/main/gpt3.5/API_scratch.ipynb}{link} in our GitHub Repository
+
+\begin{verbatim}
+import os
+from openai import OpenAI
+import pandas as pd
+import json
+
+key = os.environ.get("OPENAI_API_KEY")
+client=OpenAI(api_key=key)
+
+import json
+
+def sanitize_to_utf8(input_str):
+    """
+    Sanitizes a string field to UTF-8.
+    """
+    return input_str.encode('utf-8', 'replace').decode('utf-8')
+
+def process_jsonl_file(input_jsonl_path, output_jsonl_path):
+    """
+    Processes a JSONL file line by line, sanitizes each line to UTF-8,
+    and saves it to a new JSONL file.
+    """
+    with open(input_jsonl_path, 'r', encoding='utf-8') as input_file, \
+         open(output_jsonl_path, 'w', encoding='utf-8') as output_file:
+
+        for line in input_file:
+            # Parse JSON line
+            json_obj = json.loads(line)
+
+            # Sanitize data
+            sanitized_json_obj = {key: sanitize_to_utf8(value) if isinstance(value, str) 
+                                    else value for key, value in json_obj.items()}
+
+            # Write sanitized JSON object to new JSONL file
+            output_file.write(json.dumps(sanitized_json_obj) + '\n')
+
+"""Generating intermediate 1500 example sets.
+
+TODO: Preserve what dataset examples come from so we can breakdown performance by dataset.
+"""
+
+# Paths to your files
+input_jsonl_path = 'train_data_full.json'
+output_jsonl_path = 'output.jsonl'
+
+# Process the JSONL file
+process_jsonl_file(input_jsonl_path, output_jsonl_path)
+
+sys_prompt = "You are an expert capable of discerning truthful from deceptive opinions 
+                                                                based on speech patterns."
+
+def gen_finetune(input, output, test=False):
+    with open(input, 'r', encoding='utf-8') as data_in, \
+        open(output, 'w') as gpt_out:
+        for i, line in enumerate(data_in):
+            user_prompt = json.loads(line)['text']
+            sys_reply = "True" if json.loads(line)["label"] == 1 else "False"
+            if not test:
+                payload = {"messages": [{"role": "system", "content": sys_prompt}, 
+                {"role": "user", "content": user_prompt}, {"role": "assistant", 
+                                                            "content": sys_reply}]}
+            else:# exclude response from test set
+                payload = {"messages": [{"role": "system", "content": sys_prompt}, 
+                {"role": "user", "content": user_prompt}]}
+            gpt_out.write(json.dumps(payload) + '\n')
+
+gen_finetune('train_data_300.json', 'train300_gpt.jsonl')
+gen_finetune('val_data_300.json', 'val300_gpt.jsonl')
+
+gen_finetune('train_data_1500.json', 'train1500_gpt.jsonl')
+gen_finetune('val_data_1500.json', 'val1500_gpt.jsonl')
+
+gen_finetune('train_data_full.json', 'train_full_gpt.jsonl')
+gen_finetune('val_data_full.json', 'val_full_gpt.jsonl')
+
+"""Example of querying model for classification.  
+Example on model trained on 300 example set.
+"""
+
+test_lie = "One morning three months ago I was in a hurry and tripped on the steps 
+while running to take a shower before work. I ended up fracturing 4 metatarsal bones 
+that required two surgeries to fix. I was really having a hard time not being able 
+to walk whenever I wanted to. I really had such a bad attitude at the beginning 
+because I was so used to being independent. Now that I have recovered I have a 
+new appreciation for my ability to walk. I feel like the whole time I couldn't 
+walk I was thinking about how much I took that ability for granted. But now I 
+choose to walk more than I ever had before. When I walk the dogs I go further 
+out of my way just to enjoy the ability to do it. I am completely recovered 
+and I am going to take this as a lesson learned. Nothing is more important 
+that my personal health. I need to make sure that even if I am running late, 
+I need to take my time and be careful. Instead f making it to work on time, 
+I ended up missing weeks of work. Now all I do at work is try and catch up 
+with everything I missed. It was really nice that people at work came and 
+visited me at the hospital. I really appreciated all the flowers and candy 
+and food that was delivered. I think that this showed me how loved I truly am."
+
+test_truth = "Each and every abortion is essentially a tragedy. 
+The potential mother will suffer unforeseen consequences. Society as a whole will 
+be deprived of the potential it could have received from the new life."
+
+response = client.chat.completions.create(
+  model="ft:gpt-3.5-turbo-0613:personal::8S542QSs",
+  messages=[
+    {"role": "system", "content": sys_prompt},
+    {"role": "user", "content": test_lie},
+    {"role": "user", "content": test_truth},
+  ]
+)
+response.choices[0].message.content
+
+mdls = {
+    '300':"ft:gpt-3.5-turbo-0613:personal::8S542QSs",
+    '3.5':"gpt-3.5-turbo",
+    '1500':"ft:gpt-3.5-turbo-0613:personal::8TAkdwiX"
+    }
+
+def predict(text, model, sys_prompt):
+    response = client.chat.completions.create(
+    model=model,
+    messages=[
+        {"role": "system", "content": sys_prompt},
+        {"role": "user", "content": text}
+    ]
+    )
+    return response.choices[0].message.content
+
+test_truth
+
+test_lie
+
+def eval(test_file, mdl, return_df = False, sys_prompt=sys_prompt, by_class=False):
+    msgs = []
+    preds = []
+    trues = []
+    replies = []
+    set = []
+    with open(test_file, 'r') as f:
+        for ex in f:
+            ex = json.loads(ex)
+            msg = ex['text']
+            #pred = predict(msg, mdl) == 'True' #'True' if predict(msg) else 'False'
+            reply = predict(msg, mdl, sys_prompt) #for debug
+            pred = reply == 'True'
+            true = ex['label'] == 1
+            msgs.append(msg)
+            preds.append(pred)
+            trues.append(true)
+            replies.append(reply) # debug
+            if by_class:
+                set.append(ex['set'])
+    if by_class:
+         test_df = pd.DataFrame.from_dict({'msg': msgs, 'reply':replies, 
+                            'preds': preds, 'target': trues, 'set':set})
+    else:
+        test_df = pd.DataFrame.from_dict({'msg': msgs, 'reply':replies, 
+                            'preds': preds, 'target': trues})
+    acc = (test_df['preds'] == test_df['target']).mean()
+    if return_df:
+        return (test_df, acc)
+    else:
+        return acc
+
+
+test_truth
+
+sys_prompt_base = sys_prompt + ' Definitively classify the following statement 
+                as \'True\' or \'False\', based on the likelihood  the statement 
+                represents a genuinely held beleif or a deception.'
+#base_df, base_acc = predict('test_data_300.json', mdls['3.5'])
+predict(test_truth, mdls['300'], sys_prompt=sys_prompt)
+
+test300_df, test300_acc = eval('test_data_300.json', mdls['300'], True, 
+                                                            sys_prompt=sys_prompt)
+print(test300_acc)
+test300_df
+
+test300_acc
+
+test35_df, test35_acc = eval('test_data_300.json', mdls['3.5'], True, 
+                                                        sys_prompt=sys_prompt_base)
+print(test35_acc)
+test35_df
+
+len(test1500_df)
+
+# Takes a lot of time, cost = $1
+#test1500_df, test1500_acc = eval('test_data_1500.json',mdls['1500'],True,
+                                                            sys_prompt=sys_prompt)
+print(test1500_acc)
+test1500_df
+
+test1500_df.to_csv('results1500.csv')
+
+"""Model / Dataset Bias analysis:"""
+
+print('Model truth classification rate: ')
+print(test300_df['preds'].mean())
+print('Dataset truthful statement rate: ')
+print(test300_df['true'].mean())
+
+"""Model performance by dataset"""
+
+sys_prompt
+
+class_df, class_acc = eval('test_data_1500.json', mdl=mdls['1500'], 
+                            sys_prompt=sys_prompt, return_df=True, by_class=True)
+
+class_df['correct'] = class_df['preds'] == class_df['target']
+class_df.groupby('set')['correct'].mean()
+
+class_df.to_csv('results_class.csv')
 \end{verbatim}
 
 \end{document}
