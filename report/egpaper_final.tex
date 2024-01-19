@@ -152,7 +152,7 @@ Regarding the fine-tuning process, the two different models were trained using a
 
 \begin{itemize}
     \item a subset of the original dataset (Train: 210 examples; Validation: 45 examples; Test: 45 examples).
-    \item the full dataset (Train: 6765 examples; Validation: 1450 examples; Test: 1450 examples).
+    \item the full dataset (Train: 6765 examples; Validation: 1450 examples; Test: 1450 ??????? examples).
 \end{itemize} \\
 
 \subsection{GPT-3.5 Fine-Tuning}
@@ -240,7 +240,7 @@ fine-tuning training loss over the steps. \\
 
 10-fold cross validation is a practice to be talked about carefully when it comes to experiments with cost constraints.
 Indeed, such validation becomes very expensive, since OpenAI API calls are charged with a fee.
-To keep costs low, we decided to perform 10-fold cross validation only on
+To keep costs low, we decided to perform 3-fold cross validation only on
 the smaller model. Of course tough, we would expect a slightly better performance using the full model. (Also explain)
 
 \subsection{Stylometric Analysis}
@@ -251,28 +251,27 @@ the smaller model. Of course tough, we would expect a slightly better performanc
 
 Initially, our evaluation began with the assessment of the non-fine-tuned
 baseline GPT-3.5 model, resulting in an accuracy of 71.1\%. Subsequently,
-we fine-tuned two distinct models: the 300-Model and the 1500-Model. 
+we fine-tuned two distinct models: the 300-Model and the Full-Model, meaning
+that the models were trained with 300 examples and the full training set respectively.
 Upon completion of the fine-tuning process, we subjected both models 
 to the same evaluation methodology. \\
 
-Surprisingly, both the 300-Model and the 1500-Model exhibited a 
+As expected, the 300-Model performed worse than the Full-Model, which exhibited a 
 remarkable improvement in performance, achieving an accuracy of 82.2\%. 
-This observation suggests that fine-tuning, irrespective of the size 
-difference in the training datasets (300-Model and 1500-Model), yielded 
-consistent and substantial enhancements in accuracy when it came to differenciating
+This observation suggests that when fine-tuning, performances positively scale with the size
+of the training sets, which is consistent with the findings in ????. This yielded consistent and substantial enhancements in accuracy when it came to differenciating
 between truthful and deceptive statements, even across multiple contexts. 
-Notably, this implies that the accuracy was not adversely affected 
-by the variance in training set sizes, thereby demonstrating the 
-effectiveness of fine-tuning even when working with smaller datasets, 
-a practical consideration when aiming to minimize training costs. In fact, each OpenAI's API call
-is subject to a small fee, which, considering the total amount of calls needed and its positive relationship
-with the dimension of the training set, can result in great training costs.
+However, the aforementioned finding raises the problem of the trade-off between overall performance of the model
+and training costs for fine-tuning. In fact, each OpenAI's API call is subject to a small fee, which, considering 
+the total amount of calls needed and its positive relationship with the dimension of the training set, can result in great training costs.
+In particular, the practice of k-fold cross-validation is very resource-intensive, and can be quite costly. \\
 
-Furthermore, in adherence to established Machine Learning best practices,
-we conducted 10-fold cross-validation on the model in question. 
-The cross-validation approach allows for a comprehensive assessment 
-of the model's generalization capabilities and robustness across 
-diverse data samples.
+In adherence to established Machine Learning best practices, the cross-validation approach allows for a comprehensive assessment 
+of the model's generalization capabilities and robustness across diverse data samples, giving more accurate and reliable results. The choice of k
+is crucial for this process, and also determines the amount of resources that will be used. Ideally, 10-fold cross-validation is to be chosen.
+Though, to keep the cost low, we decided to perform 3-fold cross validation on the 300-Model. Considering this, it was expected that the cross-validated
+smaller model would perform worse than the Full-Model, and we could safely assume that, without training costs as a factor, cross-validating the Full-Model
+would have performed way better, closely to the non-cross-validated Full-Model. \\
 
 The following table provides a detailed breakdown of the models' performances,
 specifically focusing on accuracy:
@@ -284,11 +283,11 @@ specifically focusing on accuracy:
         \toprule
         Model & Dataset & Accuracy \\
         \midrule
-        300-Model & Personal Opinions & 86.3\% \\
-         & Autobiographical Memories & 82.3\% \\
-         & Future Intentions & 69.7\% \\
+        300-Model & Personal Opinions & 79.1\% \\
+         & Autobiographical Memories & 67.3\% \\
+         & Future Intentions & 50.2\% \\
         \midrule
-        1500-Model & Personal Opinions & 86.3\% \\
+        Full-Model & Personal Opinions & 86.3\% \\
          & Autobiographical Memories & 82.3\% \\
          & Future Intentions & 69.7\% \\
          \midrule
@@ -312,33 +311,29 @@ a comprehensive exploration of the model's capabilities.
 
 Despite the baseline GPT-3.5 model's inherent capability to surpass human performance - where human capabilities 
 typically hover around chance level - the fine-tuning process further enhanced its performance by 11.1\% in terms 
-of accuracy. This substantial improvement underscores the efficacy of the model to capture the nuances of deceptive language use.
+of accuracy when it came to the non-cross-validated Full-Model. 
+This substantial improvement underscores the efficacy of the model to capture the nuances of deceptive language use.
 
 Upon closer examination of performance by class, a noteworthy finding emerged: the models exhibited 
 suboptimal performance on the Future Intentions Dataset, achieving a modest 69.7\% accuracy. 
 This specific performance dip in one dataset had a discernible impact on the overall accuracy of the model.
 
-Of particular interest was the observation that training GPT-3.5 on a smaller subset of data did 
-not compromise results when compared to training on a larger set. This observation has significant 
-implications, making the fine-tuning process more accessible in terms of training costs. 
-This aspect becomes particularly critical when considering resource-intensive tasks such as 
-10-fold cross-validation, where the model's robustness and generalization capabilities are rigorously 
-assessed across diverse subsets of the data.
+Of particular interest was the observation that training GPT-3.5 on a smaller subset of data compromised
+results when compared to training on a larger set. This observation has significant 
+implications, making the fine-tuning process problematic in terms of training costs, 
+expecially when following best practices like performing k-fold cross-validation. 
 
-Future works on the topic can leverage the use of stylometric analysis to assess the problem even more thoroughly.
+Future improvement on the project could be performing 10-fold cross-validation on the Full-Model to have a better understanding
+of the full capabilities of the model in detecting deception. Moreover, the use of stylometric analysis could be leaveraged
+to assess the problem even more thoroughly.
 
 \section{TO DO}
-To do list (+ things we might do that the Loconte paper mentions)
 
 \begin{itemize}
     \item RAW DATA FILE!!
     \item fine tuning explaination
     \item cross-validation on smaller model (so we are in the same setting as Loconte, even if it might cost a bit more)
-    \item rerunning performance 3 times for statistical significance? (mean +/- 0.x)
     \item training hyperparams (see table)
-    \item stylometric analysis if possible? (see supplemental file at end of loconte paper)
-    \item better discussion, seems to lack a bit (if there are interesting considerations to be made)
-    \item any idea why the Future Intentions Dataset has lower accuracy?
 \end{itemize}
 
 \section{Code Availability}
