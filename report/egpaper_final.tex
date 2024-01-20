@@ -130,8 +130,8 @@ At the end a questionnaire was posed. \\
 
 \subsection{Dataset Preprocessing}
 
-In our methodology, we adopted \textit{'Scenario 3'} as outlined by Loconte et al. \cite{Loconte}. 
-This scenario involved the aggregation of three distinct train and test sets from \texttt{'Scenario 1'}, 
+In our methodology, we adopted \textit{Scenario 3} as outlined by Loconte et al. \cite{Loconte}. 
+This scenario involved the aggregation of three distinct train and test sets from \textit{Scenario 1}, 
 which encompassed statements related to opinions, memories, and future intentions. Subsequently, 
 the model underwent a fine-tuning process using the aggregated sets. 
 The objective of \textit{Scenario 3} was to assess the model's overall capability to classify both truthful and deceptive 
@@ -213,8 +213,8 @@ During the fine-tuning process, the model was incentivized to adopt the expected
 This reinforcement mechanism ensured that the model learned and internalized the desired characteristics, 
 minimizing the likelihood of verbose or indecisive responses.
 
-The hyperparameters used for fine-tuning the models are declared in the table below, together with the
-fine-tuning training loss over the steps. \\
+The hyperparameters used for fine-tuning the models are declared in the tables below, together with the
+fine-tuning training losses over the steps. \\
 
 \subsubsection{300-Model Fine-Tuning}
 
@@ -267,8 +267,9 @@ change the below graph to training loss of actual 300-model
 \subsubsection{N-CV-Model Fine-Tuning}
 
 k-fold cross validation is a practice to be talked about carefully when it comes to experiments with cost constraints.
-Indeed, such validation becomes very expensive, since OpenAI API calls are charged with a fee.
-To keep costs low, we decided to perform 3-fold cross validation only on
+Indeed, such validation becomes very expensive, since OpenAI API calls are charged with a fee. In particular, 
+GPT-3.5 Turbo's pricing is \$0.0010 per 1,000 tokens for input and \$0.0020 per 1,000 tokens for output, 
+where 1000 tokens equal about 750 words. To keep costs low, we decided to perform 3-fold cross validation only on
 the smaller model. Of course tough, we would expect a slightly better performance using the full model. (Also explain) \\
 
 add the illustration of the splits\\
@@ -307,12 +308,11 @@ Initially, our evaluation began with the assessment of the non-fine-tuned
 baseline GPT-3.5 model, resulting in an accuracy of 71.1\%. (\textbf{maybe also put in table the class accuracies}). Subsequently,
 we fine-tuned two distinct models: the \texttt{300-Model} and the \texttt{Full-Model}, meaning
 that the models were trained with 300 examples and the full training set respectively.
-Upon completion of the fine-tuning process, we subjected both models 
-to the same evaluation methodology. \\
+Upon completion of the fine-tuning process, we subjected both models to the same evaluation methodology. \\
 
-As expected, the \texttt{300-Model} performed worse than the \texttt{Full-Model}. The former exhibited a 
-remarkable improvement in performance, achieving an overall accuracy of 65.5\% (!!!!!!!!!!!!!), whereas the latter achieved an overall accuracy of \dots
-This observation suggests that when fine-tuning, performances positively scale with the size
+As expected, the \texttt{300-Model} performed worse than the \texttt{Full-Model}. The latter exhibited a 
+remarkable improvement in performance, achieving an overall accuracy of 82.2\%, whereas the former achieved an overall accuracy of 65.5\dots (??????)
+This observation suggests that when fine-tuning, performance positively scales with the size
 of the training sets. This yielded consistent and substantial enhancements in accuracy when it came to differenciating
 between truthful and deceptive statements, even across multiple contexts. 
 However, the aforementioned finding raises the problem of the trade-off between overall performance of the model
@@ -379,6 +379,7 @@ specifically focusing on accuracy:
 \section{Discussion}
 
 
+
 In the present study, we delved into the effectiveness of Large Language Models, specifically GPT-3.5, in the task of lie detection.
 We considered both the baseline non-fine-tuned GPT-3.5 and two instances fine-tuned accordingly with \textit{'Scenario 3'} from Loconte et al.\cite{Loconte}. 
 Our primary objective was to investigate the model's capacity to learn and generalize intrinsic linguistic representations of deception 
@@ -387,8 +388,8 @@ statements related to personal opinions, autobiographical experiences, and futur
 a comprehensive exploration of the model's capabilities. \\
 
 Despite the baseline GPT-3.5 model's inherent capability to surpass human performance - where human capabilities 
-typically hover around chance level - the fine-tuning process further enhanced its performance by 11.1\% in terms 
-of accuracy when it came to the non-cross-validated \texttt{Full-Model}. 
+typically hover around chance level - the fine-tuning process on the non-cross-validated \texttt{Full-Model} further enhanced its performance by 11.1\% in terms 
+of accuracy.
 This substantial improvement underscores the efficacy of the model to capture the nuances of deceptive language use.
 
 Upon closer examination of performance by class, a noteworthy finding emerged: the models exhibited 

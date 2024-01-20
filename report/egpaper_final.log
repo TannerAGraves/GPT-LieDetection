@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  20 JAN 2024 10:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  20 JAN 2024 10:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -390,13 +390,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--128
 LaTeX Warning: Citation `Loconte' on page 2 undefined on input line 133.
 
 
-Underfull \hbox (badness 2662) in paragraph at lines 133--141
-[]\OT1/ptm/m/n/10 In our method-ol-ogy, we adopted \OT1/ptm/m/it/10 'Sce-nario 3' \OT1/ptm/m/n/10 as
+Underfull \hbox (badness 1418) in paragraph at lines 133--141
+\OT1/ptm/m/it/10 1\OT1/ptm/m/n/10 , which en-com-passed state-ments re-lated to opin-ions,
  []
 
 
-Underfull \hbox (badness 1888) in paragraph at lines 133--141
-\OT1/ptm/m/n/10 the model un-der-went a fine-tuning pro-cess us-ing the
+Underfull \hbox (badness 1902) in paragraph at lines 133--141
+\OT1/ptm/m/n/10 un-der-went a fine-tuning pro-cess us-ing the ag-gre-gated
+ []
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 133--141
+\OT1/ptm/m/n/10 sets. The ob-jec-tive of \OT1/ptm/m/it/10 Sce-nario 3 \OT1/ptm/m/n/10 was to as-sess the
  []
 
 
@@ -465,31 +470,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--266
  []
 
 [3 <./img/training_loss.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 269--273
+Underfull \hbox (badness 10000) in paragraph at lines 269--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 296--297
+Underfull \hbox (badness 1715) in paragraph at lines 297--298
 []\OT1/ptm/m/n/10 change the be-low graph to train-ing loss of ac-tual
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
 
 File: img/training_loss.png Graphic file (type png)
 <use img/training_loss.png>
-Package pdftex.def Info: img/training_loss.png  used on input line 298.
+Package pdftex.def Info: img/training_loss.png  used on input line 299.
 (pdftex.def)             Requested size: 219.27989pt x 166.28172pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--299
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
@@ -497,7 +502,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 298--299
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--312
+Underfull \hbox (badness 10000) in paragraph at lines 307--312
 
  []
 
@@ -539,40 +544,40 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Citation `Loconte' on page 5 undefined on input line 383.
+LaTeX Warning: Citation `Loconte' on page 5 undefined on input line 384.
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 382--388
+Underfull \hbox (badness 1389) in paragraph at lines 383--389
 \OT1/ptm/m/n/10 ex-pe-ri-ences, and fu-ture in-ten-tions, thereby en-sur-ing a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 382--388
+Underfull \hbox (badness 10000) in paragraph at lines 383--389
 
  []
 
 
-Underfull \hbox (badness 1881) in paragraph at lines 394--397
+Underfull \hbox (badness 1881) in paragraph at lines 395--398
 []\OT1/ptm/m/n/10 Upon closer ex-am-i-na-tion of per-for-mance by class,
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 394--397
+Underfull \hbox (badness 1975) in paragraph at lines 395--398
 \OT1/ptm/m/n/10 a note-wor-thy find-ing emerged: the mod-els ex-hib-ited
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--397
+Underfull \hbox (badness 10000) in paragraph at lines 395--398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--404
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
 
  []
 
@@ -580,12 +585,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 405--406
 
 
 ]
-Overfull \hbox (13.14375pt too wide) in paragraph at lines 545--545
+Overfull \hbox (13.14375pt too wide) in paragraph at lines 546--546
 []                                                                        \OT1/pcr/m/n/10 inplace=True)[] 
  []
 
 
-Overfull \hbox (19.14375pt too wide) in paragraph at lines 545--545
+Overfull \hbox (19.14375pt too wide) in paragraph at lines 546--546
 []\OT1/pcr/m/n/10 train_data, temp_data = train_test_split(data_shuffle, test_size=0.3, random_state=42)[] 
  []
 
@@ -593,32 +598,32 @@ Overfull \hbox (19.14375pt too wide) in paragraph at lines 545--545
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
-Overfull \hbox (31.14375pt too wide) in paragraph at lines 763--763
+Overfull \hbox (31.14375pt too wide) in paragraph at lines 764--764
 []            \OT1/pcr/m/n/10 sanitized_json_obj = {key: sanitize_to_utf8(value) if isinstance(value, str)[] 
  []
 
 
-Overfull \hbox (43.14375pt too wide) in paragraph at lines 763--763
+Overfull \hbox (43.14375pt too wide) in paragraph at lines 764--764
 []\OT1/pcr/m/n/10 TODO: Preserve what dataset examples come from so we can breakdown performance by dataset.[] 
  []
 
 
-Overfull \hbox (19.14375pt too wide) in paragraph at lines 763--763
+Overfull \hbox (19.14375pt too wide) in paragraph at lines 764--764
 []\OT1/pcr/m/n/10 sys_prompt = "You are an expert capable of discerning truthful from deceptive opinions[] 
  []
 
 
-Overfull \hbox (43.14375pt too wide) in paragraph at lines 763--763
+Overfull \hbox (43.14375pt too wide) in paragraph at lines 764--764
 []                                                                \OT1/pcr/m/n/10 based on speech patterns."[] 
  []
 
 [8]
-Overfull \hbox (1.14375pt too wide) in paragraph at lines 763--763
+Overfull \hbox (1.14375pt too wide) in paragraph at lines 764--764
 []                                                            \OT1/pcr/m/n/10 "content": sys_reply}]}[] 
  []
 
 
-Overfull \hbox (7.14375pt too wide) in paragraph at lines 763--763
+Overfull \hbox (7.14375pt too wide) in paragraph at lines 764--764
 []\OT1/pcr/m/n/10 while running to take a shower before work. I ended up fracturing 4 metatarsal bones[] 
  []
 
@@ -626,12 +631,12 @@ Overfull \hbox (7.14375pt too wide) in paragraph at lines 763--763
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-Overfull \hbox (1.14375pt too wide) in paragraph at lines 763--763
+Overfull \hbox (1.14375pt too wide) in paragraph at lines 764--764
 []\OT1/pcr/m/n/10 def eval(test_file, mdl, return_df = False, sys_prompt=sys_prompt, by_class=False):[] 
  []
 
 
-Overfull \hbox (7.14375pt too wide) in paragraph at lines 763--763
+Overfull \hbox (7.14375pt too wide) in paragraph at lines 764--764
 []            \OT1/pcr/m/n/10 #pred = predict(msg, mdl) == 'True' #'True' if predict(msg) else 'False'[] 
  []
 
@@ -639,7 +644,7 @@ Overfull \hbox (7.14375pt too wide) in paragraph at lines 763--763
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-Overfull \hbox (1.14375pt too wide) in paragraph at lines 763--763
+Overfull \hbox (1.14375pt too wide) in paragraph at lines 764--764
 []                                                        \OT1/pcr/m/n/10 sys_prompt=sys_prompt_base)[] 
  []
 
@@ -663,7 +668,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  70i,9n,76p,394b,473s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (12 pages, 349712 bytes).
+Output written on egpaper_final.pdf (12 pages, 350167 bytes).
 PDF statistics:
  120 PDF objects out of 1000 (max. 8388607)
  33 named destinations out of 1000 (max. 500000)
