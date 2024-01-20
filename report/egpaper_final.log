@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  20 JAN 2024 10:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  20 JAN 2024 11:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -526,11 +526,6 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.80196pt too wide) in paragraph at lines 355--376
- [] 
- []
-
-
 c:/Users/marco/OneDrive - Università degli Studi di Padova/Marco/UniPD/MSc Data Science/Cognitive, Behavioural and Social Data/GPT-LieDetection/report/egpaper_final.tex:378: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -668,7 +663,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  70i,9n,76p,394b,473s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (12 pages, 350167 bytes).
+Output written on egpaper_final.pdf (12 pages, 350155 bytes).
 PDF statistics:
  120 PDF objects out of 1000 (max. 8388607)
  33 named destinations out of 1000 (max. 500000)
