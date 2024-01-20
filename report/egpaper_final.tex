@@ -216,6 +216,34 @@ minimizing the likelihood of verbose or indecisive responses.
 The hyperparameters used for fine-tuning the models are declared in the table below, together with the
 fine-tuning training loss over the steps. \\
 
+\subsubsection{300-Model Fine-Tuning}
+
+change the below table to hyperparams of actual 300-model
+
+\begin{center}
+
+    \begin{tabular}{ccc}
+        \toprule
+        Model & Hyperparameter & Value \\
+        \midrule
+        Model 1 & Learning Rate & 0.001 \\
+        & Epochs & 50 \\
+        & Batch Size & 32 \\
+        \midrule
+        Model 2 & Learning Rate & 0.01 \\
+        & Epochs & 30 \\
+        & Batch Size & 64 \\
+        \bottomrule
+    \end{tabular} \\
+
+\end{center}
+
+change the below graph to training loss of actual 300-model
+
+\includegraphics*[scale=0.55]{img/training_loss.png} \\
+
+\subsubsection{Full-Model Fine-Tuning}
+
 \begin{center}
 
     \begin{tabular}{ccc}
@@ -236,11 +264,40 @@ fine-tuning training loss over the steps. \\
 
 \includegraphics*[scale=0.55]{img/training_loss.png} \\
 
+\subsubsection{N-CV-Model Fine-Tuning}
 
 k-fold cross validation is a practice to be talked about carefully when it comes to experiments with cost constraints.
 Indeed, such validation becomes very expensive, since OpenAI API calls are charged with a fee.
 To keep costs low, we decided to perform 3-fold cross validation only on
-the smaller model. Of course tough, we would expect a slightly better performance using the full model. (Also explain)
+the smaller model. Of course tough, we would expect a slightly better performance using the full model. (Also explain) \\
+
+add the illustration of the splits\\
+
+change the below table to hyperparams of actual cv-model
+
+\begin{center}
+
+    \begin{tabular}{ccc}
+        \toprule
+        Model & Hyperparameter & Value \\
+        \midrule
+        Model 1 & Learning Rate & 0.001 \\
+        & Epochs & 50 \\
+        & Batch Size & 32 \\
+        \midrule
+        Model 2 & Learning Rate & 0.01 \\
+        & Epochs & 30 \\
+        & Batch Size & 64 \\
+        \bottomrule
+    \end{tabular} \\
+
+\end{center}
+
+change the below graph to training loss of actual cv-model \\
+
+\includegraphics*[scale=0.55]{img/training_loss.png} \\
+
+
 
 \section{Results}
 
