@@ -87,10 +87,14 @@ The participants of this study were divided in 4 groups (HITâ€™s) and asked to p
 a truthful or a deceptive opinion on the following topics: Abortion, Cannabis Legalization, Euthanasia, Gay Marriage, Policy on Migrants.
 An extract from the table is shown below. \\
 
-how many?
+\begin{center}
+\includegraphics[scale=0.40]{img/pers_op_dataset.jpg} \\
+\small {Example of the Personal Opinions Dataset.}
+\end{center}
 
 \begin{center}
-\includegraphics[scale=0.45]{img/pers_op_dataset.jpg} \\
+\includegraphics[scale=1]{img/dec_op_dataset_statistics.png} \\
+\small {Descriptive Statistics of the Personal Opinions Dataset.} 
 \end{center}
 
 \subsection{Autobiographical Memories Dataset}
@@ -106,12 +110,13 @@ The study was conducted as following:
 At the end a questionnaire was posed. \\
 
 \begin{center}
-\includegraphics[scale=0.40]{img/autobio_mem_dataset.jpg} \\
+\includegraphics[scale=0.35]{img/autobio_mem_dataset.jpg} \\
+\small {Descriptive Statistics of the Autobiographical Memories Dataset.}
 \end{center}
 
 \subsection{Future Intentions Dataset}
 
-The Future Intentions Dataset is comprised of 1640 examples.
+The Future Intentions Dataset is comprised of 1640 examples (with two answers each?).
 The study from which this dataset was collected was conducted as following.
 
 All participants are divided into either the truthful or deceptful group.
@@ -126,7 +131,17 @@ The latter were given 3 activities from the former group, asked which ones didnâ
 randomly assigned one of those. After, they were required to answer Q1, Q2 like the former group.
 At the end a questionnaire was posed. \\
 
-\includegraphics[scale=0.65]{img/future_intentions_dataset.jpg} \\
+\begin{center}
+    \includegraphics[scale=0.65]{img/future_intentions_dataset.jpg} \\
+    \small {Example of the Future Intentions Dataset.} \\
+\end{center} 
+
+
+\begin{center}
+    \includegraphics[scale=0.65]{img/future_intentions_dataset_statistics.png} \\
+    \small {Descriptive Statistics of the Future Intentions Dataset.} 
+\end{center}
+
 
 \section{Methods}
 
@@ -248,7 +263,10 @@ The hyperparameters used for fine-tuning the models are declared in the tables b
 
 \end{center} \\
 
+\begin{center}
 \includegraphics*[scale=0.55]{img/training_loss_full.png} \\
+\small {Training Loss of the 300-Model (to change!).} \\
+\end{center}
 
 \subsubsection*{Full-Model Fine-Tuning}
 
@@ -271,7 +289,11 @@ The hyperparameters used for fine-tuning the models are declared in the tables b
 \end{center} \\
 
  % CHANGE WITH ACTUAL ONE
-\includegraphics*[scale=0.55]{img/training_loss_full.png} \\
+
+\begin{center}
+    \includegraphics*[scale=0.55]{img/training_loss_full.png} \\
+    \small {Training Loss of the Full-Model.} \\
+\end{center}
 
 \subsection{Cross-Validation}
 
@@ -291,8 +313,9 @@ a minority class (16.6\% of training data for other models).
 Below, the diagram explaining the cross-validation process is presented:
 
 \begin{center}
-\includegraphics*[scale=0.6]{img/cross_validation.png}
-\end{center} \\
+\includegraphics*[scale=0.6]{img/cross_validation.png} \\
+\small {Cross-Validation Process Diagram.} \\
+\end{center} 
 
 \begin{center}
 
@@ -313,7 +336,12 @@ Below, the diagram explaining the cross-validation process is presented:
 \end{center} \\
 
 % CHANGE WITH ACTUAL ONE
+\begin{center}
 \includegraphics*[scale=0.55]{img/training_loss_full.png} \\
+\small {Training Loss of the Cross-Validated model.}
+\end{center} \\
+
+
 
 
 
@@ -343,7 +371,8 @@ is crucial for this process, and also determines the amount of resources that wi
 Though, to keep the cost low, we decided to perform 3-fold cross validation on the \texttt{300-Model}. Considering this, it was expected that the cross-validated
 smaller model would perform worse than the Full-Model, and we could safely assume that, without training costs as a factor, cross-validating the \texttt{Full-Model}
 would have performed way better, closely to the non-cross-validated \texttt{Full-Model}.
-The cross-validated model (name?) achieved \dots accuracy \dots
+The cross-validated \texttt{300-CV-Model} achieved 75.5\% accuracy (?), showing cross-validation to improve the performace over the \texttt{300-Model},
+although, as expected, not being as accurate as the \texttt{Full-Model}.
 
 The following table provides a detailed breakdown of the models' performances,
 specifically focusing on accuracy:
@@ -362,7 +391,9 @@ specifically focusing on accuracy:
          \midrule
         300-CV-Model & 75.2\% \\
         \bottomrule
-    \end{tabular}
+    \end{tabular} \\
+
+    \small {Overall Accuracy of the models compared.}
 
 \end{center} \\
 
@@ -373,25 +404,45 @@ specifically focusing on accuracy:
         \toprule
         Model & Dataset & Accuracy \\
         \midrule
-        Base GPT-3.5 & Personal Opinions & x\% \\
-         & Autobio. Memories & x\% \\
-         & Future Intentions & x\% \\
+        Base GPT-3.5 & Personal Opinions & 49.5\% \\
+                        & Autobio. Memories & 47.5\% \\
+                        & Future Intentions & 51.5\% \\
         \midrule
         300-Model & Personal Opinions & 79.1\% \\
-         & Autobio. Memories & 67.3\% \\
-         & Future Intentions & 50.2\% \\
+                    & Autobio. Memories & 67.3\% \\
+                    & Future Intentions & 50.2\% \\
         \midrule
         Full-Model & Personal Opinions & 86.3\% \\
-         & Autobio. Memories & 82.3\% \\
-         & Future Intentions & 69.7\% \\
+                    & Autobio. Memories & 82.3\% \\
+                    & Future Intentions & 69.7\% \\
          \midrule
          CV-Model & Personal Opinions & 86.3\% \\
-          & Autobio. Memories & 82.3\% \\
-          & Future Intentions & 69.7\% \\
+                    & Autobio. Memories & 82.3\% \\
+                    & Future Intentions & 69.7\% \\
         \bottomrule
-    \end{tabular}
+    \end{tabular} \\
+
+    \small {Class-wise accuracy of the models compared.}
 
 \end{center} \\
+
+
+
+\begin{center}
+    \begin{tabular}{lccc}
+      \toprule
+      & Model 1 & Model 2 & Model 3 \\
+      \midrule
+      Personal Op. & 83.5\% & 83.5\% & 80.0\% \\
+      Autobio. Memories & 68.0\% & 69.5\% & 70.5\% \\
+      Future Intentions & 72.5\% & 72.5\% & 70.0\% \\
+      \midrule
+      Macro avg. Acc. & 74.7\% & 75.2\% & 73.5\% \\
+      \bottomrule
+    \end{tabular} \\
+
+    \small {Class-wise accuracy of Cross-Validated model compared.}
+\end{center}
 
 \section{Discussion}
 
