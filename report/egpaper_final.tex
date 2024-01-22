@@ -57,14 +57,15 @@ Claudio Palmeri \\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-This paper aims at evaluating the capabilities of GPT3.5 in the task of Lie Detection.
-This is done through the fine-tuning of GPT-3.5 on three English and Italian language datasets encompassing 
+This paper aims at evaluating the capabilities of GPT-3.5 in the task of Lie Detection.
+This is done through the fine-tuning of GPT-3.5 on three English-language datasets encompassing 
 personal opinions, autobiographical memories, and future intentions. 
 Fine-tuning of LLMs consists in adapting a pre-trained language model to a specific 
 task by further training the model on task-specific data, thereby 
 enhancing its ability to generate contextually relevant and coherent text in 
 line with the desired task objectives. In our investigation, the objective is to 
 discern and classify instances of truth or deception.
+Our fine-tuned model achieved an overall 82.2\% accuracy on the test set.
 
 \end{abstract}
 
@@ -83,9 +84,9 @@ Future Intentions Dataset, following \textit{'Scenario 3'} from Loconte et al.\c
 
 \subsection{Personal Opinion Dataset}
 
-The participants of this study were divided in 4 groups (HIT’s) and asked to provide either 
+The participants of this study were divided in 4 groups (Human Intelligent Tasks, HITs) and asked to provide either 
 a truthful or a deceptive opinion on the following topics: Abortion, Cannabis Legalization, Euthanasia, Gay Marriage, Policy on Migrants.
-An extract from the table is shown below. \\
+The description of the HITs' structure is presented below. \\
 
 \begin{center}
 \includegraphics[scale=0.40]{img/pers_op_dataset.jpg} \\
@@ -107,7 +108,7 @@ The study was conducted as following:
     \item Stage 2: Group B is tasked to write an imaginative story with the summary of group A as a prompt
     \item Stage 3: After 2 months group A is asked to retell the story starting with their summary as a prompt
 \end{itemize}
-At the end a questionnaire was posed. \\
+%At the end a questionnaire was posed. \\
 
 \begin{center}
 \includegraphics[scale=0.35]{img/autobio_mem_dataset.jpg} \\
@@ -116,20 +117,22 @@ At the end a questionnaire was posed. \\
 
 \subsection{Future Intentions Dataset}
 
-The Future Intentions Dataset is comprised of 1640 examples with two answer each, as each test subject had to answer 2 questions (Q1,Q2).
+The Future Intentions Dataset is comprised of 1640 examples with two answers each, as each test subject had to answer 2 questions (Q1,Q2).
 The study from which this dataset was collected was conducted as following.
 
 All participants are divided into either the truthful or deceptful group.
-The former were asked to describe a non-work-related activity that would be doing in the next seven days answering the following questions:
+The former were asked to describe a non-work-related activity that they would be doing in the next seven days answering the following questions:
 
 \begin{itemize}
     \item Q1: “Please describe your activity as specific as possible”
     \item Q2: “Which information can you give us to reassure us that you are telling the truth”
 \end{itemize}
 
-The latter were given 3 activities from the former group, asked which ones didn’t apply to them and get 
-randomly assigned one of those. After, they were required to answer Q1, Q2 like the former group.
-At the end a questionnaire was posed. \\
+The participants of the Deceitful Group were given 3 activities from the former group, asked which ones didn’t apply 
+to them and get randomly assigned one of those. After, they were required to answer Q1, Q2 like the former group.
+Through a questionnare, they excluded those who failed the manipulation
+check, provided no or too short input, and whose answers to the second question resembled their
+answer on the first question too much. \\
 
 \begin{center}
     \includegraphics[scale=0.65]{img/future_intentions_dataset.jpg} \\
@@ -156,7 +159,9 @@ statements across diverse contexts. Notably, in this scenario, the model was not
 of statement; instead, it was evaluated on opinions, memories, and future intentions collectively, 
 treating them as a randomly shuffled set of statements to be classified without bias towards any particular category. \\
 
-The implementation of this process involved the merging of individual datasets into a unified one after cleaning and shuffling them.
+The implementation of this process involved the merging of individual datasets into a unified one after cleaning and shuffling them. 
+In particular, in the Autobiographical Memories Dataset, the retord category was discarded. This reduced the total number of stories in that dataset to 5,535.
+Also, since we assumed that linguistic styles in deceptive statements change with the actual chosen language, we discarded the Italian sentences in the Deceptive Opinions Dataset.
 The resulting dataset was then partitioned into training, validation, and test sets. It is essential 
 to highlight that we intentionally did not utilize the entire initial dataset. The decision to employ a smaller 
 training dataset was aimed to computationally simplify the training process of the LLM, while still ensuring effective learning and generalization. \\
@@ -168,34 +173,34 @@ Regarding the fine-tuning process, the two different models were trained using a
 
 \begin{itemize}
     \item a subset of the original dataset (Train: 210 examples; Validation: 45 examples; Test: 45 examples).
-    \item the full dataset (Train: 6765 examples; Validation: 1450 examples; Test: 1450 ??????? examples).
+    \item the full dataset (Train: 6765 examples; Validation: 1450 examples; Test: 1450 examples).
 \end{itemize} \\
 
 \subsection{GPT-3.5 Fine-Tuning}
 
 This problem is a natural application for large language models, as the embeddings they learn in tandem
-with their ability for self attention would seem a good model lie detection, and have shown promise with
-similar problems. GPT-3.5 has been trained on an incredibly diverse dataset, and outperforms humans at lie
-detection across all three datasets, despite not receiving specific training on this task. We aim to improve the
-capability of GPT3.5 on the task through the process of fine tuning. OpenAI has maintained a high degree of
+with their ability for self attention would seem a good model for lie detection, and have shown promise with
+similar problems. GPT-3.5 has been trained on an incredibly diverse dataset, but does not outperforms humans at lie
+detection without any fine-tuning, as it is not specifically aware of cues of deception. We aim to improve the
+capability of GPT-3.5 on the task through the process of fine-tuning. OpenAI has maintained a high degree of
 secrecy about their fine tuning process, not releasing the specifics of which parameters in the model
 are tuned, or even how. The loss function employed is able to assess both differences between style and 
 content between text, but in the case of a binary classifier loss is seen to loosely parody accuracy. 
-In similarly large models, however, task specific fine-tuning will typically adjust parameters in the 
+In similarly large models, however, task specific fine-tuning will typically adjust the parameters in the 
 last couple layers before output. \\
 
 In our study, we trained the model using the OpenAI API and evaluated its performance through testing 
-and comparison with GPT-3.5. We also conducted additional experiments to understand how engineering 
+and comparison with the baseline GPT-3.5. We also conducted additional experiments to understand how engineering 
 the system prompt affects overall performance. One specific observation we made was regarding the baseline 
 GPT-3.5's tendency to provide verbose or indecisive answers. When faced with statements that could be easily 
-classified as genuine or deceptive, the model tended to provide detailed responses. However, in cases where 
+classified as genuine or deceptive, the model tended to provide detailed responses. Moreover, in cases where 
 it lacked sufficient information to confidently categorize a statement, the model often chose not to give a 
 definitive answer.
 
-To exemplify this behavior, let's consider the following scenario: when the model encounters uncertainty 
-regarding a statement, it chooses not to offer a definitive classification. This characteristic underscores
+To exemplify this behavior, let's consider the situation where the model encounters uncertainty 
+regarding a statement, and it chooses not to offer a definitive classification. This characteristic underscores
 the model's cautious approach when confronted with a potential lack of information, prioritizing the avoidance
-of incorrect responses over providing answers that may be inaccurate.
+of incorrect responses over providing answers that may be inaccurate. The actual prompt and response are the following:
 
 \begin{verbatim}
 User: "Each and every abortion 
@@ -243,8 +248,8 @@ minimizing the likelihood of verbose or indecisive responses. \\
 
 The hyperparameters used for fine-tuning the models are declared in 
 the tables below, together with the fine-tuning training and validation losses over the steps.
-It is important to clarify that the batch size - is the number of training examples used to train a single forward and backward pass - is not something under our control when fine-tuning.
-By default, the batch size will be dynamically configured to be ~0.2\% of the number of examples in the training set.
+It is important to clarify that the batch size - the number of training examples used to train a single forward and backward pass - is not something under our control when fine-tuning.
+By default, the batch size will be dynamically configured to be roughly 0.2\% of the number of examples in the training set.
 
 
 \subsubsection*{300-Model Fine-Tuning}
@@ -304,7 +309,7 @@ By default, the batch size will be dynamically configured to be ~0.2\% of the nu
 
 \subsection{Cross-Validation}
 
-Wanting to mitigate potential performance variation caused by the small test set of the 300-model, 
+Wanting to mitigate potential performance variation caused by the small test set of the \texttt{300-Model}, 
 we implemented k-fold cross-validation for another set of models.
 However, k-fold cross validation is a very resource-intensive process, and since we were using the official OpenAI API,
 we were constrained by costs. Indeed, such validation becomes very expensive: GPT-3.5's pricing is \$0.0010 per 1,000 tokens 
