@@ -80,7 +80,11 @@ that elude human perception. This paper employs OpenAI's GPT-3.5 Large Language 
 as the focal point, starting with an assessment of the base model's performance. Subsequently, 
 an in-depth examination will be conducted on a fine-tuned GPT-3.5 model, specifically calibrated using the 
 Personal Opinion Dataset (Deceptive Opinions), the Autobiographical Memories Dataset (Hippocorpus), and the 
-Future Intentions Dataset, following \textit{'Scenario 3'} from Loconte et al.\cite{Loconte} \\
+Future Intentions Dataset, following \textit{'Scenario 3'} from Loconte et al.\cite{Loconte}.
+As stated in Capuozzo et al. \cite{Capuozzo}, previous findings showed a general decreas in classifiers'
+performance when training and test data belonging to different domains. Interestingly, by employing \textit{Scenario 3},
+this study will also take into account both different domains and different types of deception, shedding a broader light
+on the actual capabilities of Large Language Models in generalizing detection of deceptive linguistic behaviours.
 
 \subsection{Personal Opinion Dataset}
 
@@ -161,15 +165,20 @@ treating them as a randomly shuffled set of statements to be classified without 
 
 The implementation of this process involved the merging of individual datasets into a unified one after cleaning and shuffling them. 
 In particular, in the Autobiographical Memories Dataset, the retord category was discarded. This reduced the total number of stories in that dataset to 5,535.
-Also, since we assumed that linguistic styles in deceptive statements change with the actual chosen language, we discarded the Italian sentences in the Deceptive Opinions Dataset.
-The resulting dataset was then partitioned into training, validation, and test sets. It is essential 
-to highlight that we intentionally did not utilize the entire initial dataset. The decision to employ a smaller 
-training dataset was aimed to computationally simplify the training process of the LLM, while still ensuring effective learning and generalization. \\
+It is essential to highlight that we intentionally did not utilize the entire initial dataset. Since we assumed that linguistic styles in deceptive statements change 
+with the actual chosen language, we discarded the Italian sentences in the Deceptive Opinions Dataset.
+The resulting dataset was then partitioned into training, validation, and test sets. This decision stems from the fact that only the Opinions Dataset
+presents Italian-language sentences, whereas the majority of the entire dataset is in English. Keeping the Italian part of the dataset could have represented
+a challenge for the model to learn deceptive patterns in a single-language context, possibly hindering the overall performances, not to mention it being an additional
+uncontrolled variable in our study. Moreover, sentences written in Italian would have constituted a minority class, resulting in a massively unbalanced dataset,
+which is a phenomenon extensively documented in the machine learning field and regarded as problematic.
+We also created two different training datasets, one smaller and one utilizing the entire data. The former was aimed to computationally simplify the training process of the LLM, 
+while still ensuring effective learning and generalization. \\
 
 As a final step, the datasets were formatted into \texttt{JSON} format to align with the expected input format of the OpenAI API, ensuring seamless integration with the API itself. 
 For a detailed understanding of the implementation code, please refer to the \hyperref[sec:appendix]{Appendix} section of this paper, where the Python code is provided for reference.\\
 
-Regarding the fine-tuning process, the two different models were trained using a smaller and bigger dataset as follows:
+Regarding the fine-tuning process, the two different models were trained using the smaller and full dataset as follows:
 
 \begin{itemize}
     \item a subset of the original dataset (Train: 210 examples; Validation: 45 examples; Test: 45 examples).
@@ -325,7 +334,7 @@ a minority class (16.6\% of training data for other models).
 Below, the diagram explaining the cross-validation process is presented:
 
 \begin{center}
-\includegraphics*[scale=0.55]{img/cross_validation.png}
+\includegraphics*[scale=0.40]{img/cross_validation_diagram.jpg}
 \end{center}
 
 \begin{center}
@@ -377,7 +386,7 @@ yielded consistent and substantial enhancements in accuracy when it came to diff
 between truthful and deceptive statements, even across multiple contexts. 
 However, the aforementioned finding raises the problem of the trade-off between overall performance of the model
 and training costs for fine-tuning when cross-validating. In fact, each OpenAI's API call is subject to a small fee, which, considering 
-the total amount of calls needed and its positive relationship with the dimension of the training set, can result in great training costs.
+the total amount of calls needed and its positive relationship with the dimension of the training set, can result in great training costs. \\
 
 In adherence to established Machine Learning best practices, the cross-validation approach allows for a comprehensive assessment 
 of the model's generalization capabilities and robustness across diverse data samples, giving more accurate and reliable results. The choice of \texttt{k} 
@@ -385,8 +394,8 @@ is crucial for this process, and also determines the amount of resources that wi
 Though, to keep the cost low, we decided to perform 3-fold cross validation on the \texttt{300-Model}. Considering this, it was expected that the cross-validated
 smaller model would perform worse than the Full-Model, and we could safely assume that, without training costs as a factor, cross-validating the \texttt{Full-Model}
 would have performed way better, closely to the non-cross-validated \texttt{Full-Model}.
-The cross-validated \texttt{300-CV-Model} achieved 75.5\% accuracy (?), showing cross-validation to improve the performace over the \texttt{300-Model},
-although, as expected, not being as accurate as the \texttt{Full-Model}.
+The cross-validated \texttt{300-CV-Model} achieved 75.2\% accuracy, showing cross-validation to improve the performace over the \texttt{300-Model},
+although, as expected, not being as accurate as the \texttt{Full-Model}. \\
 
 The following table provides a detailed breakdown of the models' performances,
 specifically focusing on accuracy:
@@ -466,24 +475,34 @@ across a spectrum of contexts. This investigation was conducted using three dist
 statements related to personal opinions, autobiographical experiences, and future intentions, thereby ensuring 
 a comprehensive exploration of the model's capabilities. \\
 
-Despite the baseline GPT-3.5 model's incapability to surpass human performance - where human capabilities 
+Despite the baseline GPT-3.5 model's initial incapability to surpass human performance - where human capabilities 
 typically hover around chance level - the fine-tuning process on the non-cross-validated \texttt{Full-Model} further enhanced its performance by 32.7\% in terms 
 of accuracy.
 This substantial improvement underscores the efficacy of the model to capture the nuances of deceptive language use.
 
-Upon closer examination of performance by class, a noteworthy finding emerged: the models exhibited 
+Upon closer examination of performance by class, a noteworthy finding emerged for the \texttt{Full-Model}: the models exhibited 
 suboptimal performance on the Future Intentions Dataset, achieving a modest 69.7\% accuracy. 
 This specific performance dip in one dataset had a discernible impact on the overall accuracy of the model. \\
 
-When taking the \texttt{300-Model} into consideration, the overall accuracy gain compared to the baseline GPT-3.5 was 16\%. \\ 
+When taking the \texttt{300-Model} into consideration, the overall accuracy gain compared to the baseline GPT-3.5 was 16\%. 
+Interestingly, this model did not see any improvements in the Future Intentions Dataset, performing slightly worse than baseline,
+although this can be considered coincidental.
 
 Of particular interest was the observation that training GPT-3.5 on a smaller subset of data compromised
 results when compared to training on a larger set. This observation has significant 
 implications, making the fine-tuning process problematic in terms of training costs, 
 expecially when following best practices like performing k-fold cross-validation. \\
 
-The cross-validated \texttt{300-Model}, instead, represents the most accurate representation of the capability of the model trained
-on the smaller dataset, improving its accuracy by an additional 9.7\%. \\
+The cross-validated \texttt{300-CV-Model}, instead, represents the most accurate representation of the capability of the model trained
+on the smaller dataset, improving its accuracy by an additional 9.7\%. Interestingly, this model had a way better accuracy
+in the Future Intentions Dataset compared to both the \texttt{300-Model} and \texttt{Full-Model}, showing cross-validation to be particularly
+effective in this case. This variability in accuracy across different dataset sizes shows that the Future Intentions Dataset is affected the 
+most compared to the other datasets used. \\
+
+Overall, we can confidently state that fine-tuning massively improved the performance of GPT-3.5 in the task of lie deception,
+confirming the assumption that Transformer-based Large Language Models are effective in deceptive pattern recognition. Findings
+from our study also demonstrate that size of datasets is positively correlated to better performance, and that cross-validation
+is effective in further consolidating it.
 
 Future improvements on the project could be performing 10-fold cross-validation on the \texttt{Full-Model} to have a better understanding
 of the full capabilities of GPT-3.5 in detecting deception leveraging the full dataset. Moreover, the use of stylometric analysis could shed
