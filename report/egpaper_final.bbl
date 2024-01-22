@@ -1,8 +1,25 @@
 \begin{thebibliography}{1}\itemsep=-1pt
 
+\bibitem{Capuozzo}
+Capuozzo et al.
+\newblock Decop: A multilingual and multi-domain corpus for detecting deception
+  in typed text.
+\newblock 2020.
+
+\bibitem{Kleinberg}
+Kleinberg et al.
+\newblock How humans impair automated deception detection performance.
+\newblock 2021.
+
 \bibitem{Loconte}
 Loconte et al.
 \newblock Verbal lie detection using large language models.
 \newblock 2023.
+
+\bibitem{Sap}
+Sap et al.
+\newblock Quantifying the narrative flow of imagined versus autobiographical
+  stories.
+\newblock 2022.
 
 \end{thebibliography}

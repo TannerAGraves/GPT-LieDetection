@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  22 JAN 2024 16:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  22 JAN 2024 16:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -344,6 +344,9 @@ LaTeX Warning: Citation `Loconte' on page 1 undefined on input line 83.
 LaTeX Warning: Citation `Capuozzo' on page 1 undefined on input line 84.
 
 
+LaTeX Warning: Citation `Capuozzo' on page 1 undefined on input line 91.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 91--94
 
  []
@@ -362,8 +365,11 @@ Package pdftex.def Info: img/dec_op_dataset_statistics.png  used on input line 1
 
 
  <./img/pers_op_dataset.jpg>]
+
+LaTeX Warning: Citation `Sap' on page 2 undefined on input line 108.
+
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 111.
- (C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+(C:\Users\marco\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 <img/autobio_mem_dataset.jpg, id=17, 503.8825pt x 197.73875pt>
@@ -371,6 +377,10 @@ File: img/autobio_mem_dataset.jpg Graphic file (type jpg)
 <use img/autobio_mem_dataset.jpg>
 Package pdftex.def Info: img/autobio_mem_dataset.jpg  used on input line 118.
 (pdftex.def)             Requested size: 176.36151pt x 69.2096pt.
+
+
+LaTeX Warning: Citation `Kleinberg' on page 2 undefined on input line 125.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 135--140
 
@@ -570,12 +580,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 496--501
 
 
 ]
-Overfull \hbox (13.14375pt too wide) in paragraph at lines 643--643
+Overfull \hbox (13.14375pt too wide) in paragraph at lines 636--636
 []                                                                        \OT1/pcr/m/n/10 inplace=True)[] 
  []
 
 
-Overfull \hbox (19.14375pt too wide) in paragraph at lines 643--643
+Overfull \hbox (19.14375pt too wide) in paragraph at lines 636--636
 []\OT1/pcr/m/n/10 train_data, temp_data = train_test_split(data_shuffle, test_size=0.3, random_state=42)[] 
  []
 
@@ -583,32 +593,32 @@ Overfull \hbox (19.14375pt too wide) in paragraph at lines 643--643
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-Overfull \hbox (31.14375pt too wide) in paragraph at lines 861--861
+Overfull \hbox (31.14375pt too wide) in paragraph at lines 854--854
 []            \OT1/pcr/m/n/10 sanitized_json_obj = {key: sanitize_to_utf8(value) if isinstance(value, str)[] 
  []
 
 
-Overfull \hbox (43.14375pt too wide) in paragraph at lines 861--861
+Overfull \hbox (43.14375pt too wide) in paragraph at lines 854--854
 []\OT1/pcr/m/n/10 TODO: Preserve what dataset examples come from so we can breakdown performance by dataset.[] 
  []
 
 
-Overfull \hbox (19.14375pt too wide) in paragraph at lines 861--861
+Overfull \hbox (19.14375pt too wide) in paragraph at lines 854--854
 []\OT1/pcr/m/n/10 sys_prompt = "You are an expert capable of discerning truthful from deceptive opinions[] 
  []
 
 
-Overfull \hbox (43.14375pt too wide) in paragraph at lines 861--861
+Overfull \hbox (43.14375pt too wide) in paragraph at lines 854--854
 []                                                                \OT1/pcr/m/n/10 based on speech patterns."[] 
  []
 
 [9]
-Overfull \hbox (1.14375pt too wide) in paragraph at lines 861--861
+Overfull \hbox (1.14375pt too wide) in paragraph at lines 854--854
 []                                                            \OT1/pcr/m/n/10 "content": sys_reply}]}[] 
  []
 
 
-Overfull \hbox (7.14375pt too wide) in paragraph at lines 861--861
+Overfull \hbox (7.14375pt too wide) in paragraph at lines 854--854
 []\OT1/pcr/m/n/10 while running to take a shower before work. I ended up fracturing 4 metatarsal bones[] 
  []
 
@@ -616,12 +626,12 @@ Overfull \hbox (7.14375pt too wide) in paragraph at lines 861--861
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-Overfull \hbox (1.14375pt too wide) in paragraph at lines 861--861
+Overfull \hbox (1.14375pt too wide) in paragraph at lines 854--854
 []\OT1/pcr/m/n/10 def eval(test_file, mdl, return_df = False, sys_prompt=sys_prompt, by_class=False):[] 
  []
 
 
-Overfull \hbox (7.14375pt too wide) in paragraph at lines 861--861
+Overfull \hbox (7.14375pt too wide) in paragraph at lines 854--854
 []            \OT1/pcr/m/n/10 #pred = predict(msg, mdl) == 'True' #'True' if predict(msg) else 'False'[] 
  []
 
@@ -629,7 +639,7 @@ Overfull \hbox (7.14375pt too wide) in paragraph at lines 861--861
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
-Overfull \hbox (1.14375pt too wide) in paragraph at lines 861--861
+Overfull \hbox (1.14375pt too wide) in paragraph at lines 854--854
 []                                                        \OT1/pcr/m/n/10 sys_prompt=sys_prompt_base)[] 
  []
 
@@ -645,17 +655,17 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 9895 strings out of 478582
- 157704 string characters out of 2844345
- 449118 words of memory out of 3000000
- 27881 multiletter control sequences out of 15000+600000
+ 9900 strings out of 478582
+ 157756 string characters out of 2844345
+ 450118 words of memory out of 3000000
+ 27884 multiletter control sequences out of 15000+600000
  491292 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,9n,76p,394b,473s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/marco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (13 pages, 484862 bytes).
+Output written on egpaper_final.pdf (13 pages, 485198 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
+ 134 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
  60 words of extra memory for PDF output out of 10000 (max. 10000000)
 
