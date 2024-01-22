@@ -58,7 +58,7 @@ Claudio Palmeri \\
 %%%%%%%%% ABSTRACT
 \begin{abstract}
 This paper aims at evaluating the capabilities of GPT3.5 in the task of Lie Detection.
-This is done through the fine-tuning of GPT-3.5 on three English-language datasets encompassing 
+This is done through the fine-tuning of GPT-3.5 on three English and Italian language datasets encompassing 
 personal opinions, autobiographical memories, and future intentions. 
 Fine-tuning of LLMs consists in adapting a pre-trained language model to a specific 
 task by further training the model on task-specific data, thereby 
@@ -116,7 +116,7 @@ At the end a questionnaire was posed. \\
 
 \subsection{Future Intentions Dataset}
 
-The Future Intentions Dataset is comprised of 1640 examples (with two answers each?).
+The Future Intentions Dataset is comprised of 1640 examples with two answer each, as each test subject had to answer 2 questions (Q1,Q2).
 The study from which this dataset was collected was conducted as following.
 
 All participants are divided into either the truthful or deceptful group.
@@ -239,33 +239,40 @@ or a deception."
 
 During the fine-tuning process, the model was incentivized to adopt the expected behavior and adhere to the specified output format. 
 This reinforcement mechanism ensured that the model learned and internalized the desired characteristics, 
-minimizing the likelihood of verbose or indecisive responses.
+minimizing the likelihood of verbose or indecisive responses. \\
 
-The hyperparameters used for fine-tuning the models are declared in the tables below, together with the fine-tuning training losses over the steps.
+The hyperparameters used for fine-tuning the models are declared in 
+the tables below, together with the fine-tuning training and validation losses over the steps.
+It is important to clarify that the batch size - is the number of training examples used to train a single forward and backward pass - is not something under our control when fine-tuning.
+By default, the batch size will be dynamically configured to be ~0.2\% of the number of examples in the training set.
+
 
 \subsubsection*{300-Model Fine-Tuning}
+
 
 \begin{center}
 
     \begin{tabular}{ccc}
         \toprule
-        Model & Hyperparameter & Value \\
+        Hyperparameter & Value \\
         \midrule
-        Model 1 & Learning Rate & ??? \\
-        & Epochs & ?? \\
-        & Batch Size & ?? \\
-        \midrule
-        Model 2 & Learning Rate & ?? \\
-        & Epochs & ?? \\
-        & Batch Size & ?? \\
+        Learning Rate & ??? \\
+        Epochs & ?? \\
+        Batch Size & ?? \\
         \bottomrule
-    \end{tabular} 
-
-\end{center} \\
+    \end{tabular}
+\end{center} 
 
 \begin{center}
-\includegraphics*[scale=0.55]{img/training_loss_full.png} \\
-\small {Training Loss of the 300-Model (to change!).} \\
+    \small {Fine-Tuning Hyperparameters of the Cross-Validated model.} 
+\end{center}
+
+\begin{center}
+\includegraphics*[scale=0.55]{img/training_loss_full.png} 
+\end{center}
+
+\begin{center}
+    \small {Training Loss of the 300-Model (to change!).} 
 \end{center}
 
 \subsubsection*{Full-Model Fine-Tuning}
@@ -274,25 +281,25 @@ The hyperparameters used for fine-tuning the models are declared in the tables b
 
     \begin{tabular}{ccc}
         \toprule
-        Model & Hyperparameter & Value \\
+        Hyperparameter & Value \\
         \midrule
-        Model 1 & Learning Rate & 0.001 \\
-        & Epochs & 50 \\
-        & Batch Size & 32 \\
-        \midrule
-        Model 2 & Learning Rate & 0.01 \\
-        & Epochs & 30 \\
-        & Batch Size & 64 \\
+        Learning Rate & ??? \\
+        Epochs & ?? \\
+        Batch Size & ?? \\
         \bottomrule
-    \end{tabular}
-
-\end{center} \\
-
- % CHANGE WITH ACTUAL ONE
+    \end{tabular} 
+\end{center} 
 
 \begin{center}
-    \includegraphics*[scale=0.55]{img/training_loss_full.png} \\
-    \small {Training Loss of the Full-Model.} \\
+    \small {Fine-Tuning Hyperparameters of the Full-Model.} 
+\end{center}
+
+\begin{center}
+    \includegraphics*[scale=0.55]{img/training_loss_full.png} 
+\end{center}
+
+\begin{center}
+    \small {Training Loss of the Full-Model.} 
 \end{center}
 
 \subsection{Cross-Validation}
@@ -313,37 +320,39 @@ a minority class (16.6\% of training data for other models).
 Below, the diagram explaining the cross-validation process is presented:
 
 \begin{center}
-\includegraphics*[scale=0.6]{img/cross_validation.png} \\
-\small {Cross-Validation Process Diagram.} \\
-\end{center} 
+\includegraphics*[scale=0.55]{img/cross_validation.png}
+\end{center}
+
+\begin{center}
+    \small {Diagram of the Cross-Validation Process.} 
+\end{center}
 
 \begin{center}
 
     \begin{tabular}{ccc}
         \toprule
-        Model & Hyperparameter & Value \\
+        Hyperparameter & Value \\
         \midrule
-        Model 1 & Learning Rate & 0.001 \\
-        & Epochs & 50 \\
-        & Batch Size & 32 \\
-        \midrule
-        Model 2 & Learning Rate & 0.01 \\
-        & Epochs & 30 \\
-        & Batch Size & 64 \\
+        Learning Rate & ??? \\
+        Epochs & ?? \\
+        Batch Size & ?? \\
         \bottomrule
-    \end{tabular}
+    \end{tabular} 
+ 
+\end{center}
 
-\end{center} \\
+\begin{center}
+    \small {Fine-Tuning Hyperparameters of the Cross-Validated model.}
+\end{center}
 
 % CHANGE WITH ACTUAL ONE
 \begin{center}
-\includegraphics*[scale=0.55]{img/training_loss_full.png} \\
-\small {Training Loss of the Cross-Validated model.}
-\end{center} \\
+\includegraphics*[scale=0.55]{img/training_loss_full.png}
+\end{center} 
 
-
-
-
+\begin{center}
+    \small {Training Loss of the Cross-Validated model.} 
+\end{center}
 
 \section{Results}
 
@@ -391,12 +400,13 @@ specifically focusing on accuracy:
          \midrule
         300-CV-Model & 75.2\% \\
         \bottomrule
-    \end{tabular} \\
+    \end{tabular}
+    
+\end{center}
 
-    \small {Overall Accuracy of the models compared.}
-
-\end{center} \\
-
+\begin{center}
+\small {Overall Accuracy of the models compared.}
+\end{center}
 
 \begin{center}
 
@@ -415,18 +425,14 @@ specifically focusing on accuracy:
         Full-Model & Personal Opinions & 86.3\% \\
                     & Autobio. Memories & 82.3\% \\
                     & Future Intentions & 69.7\% \\
-         \midrule
-         CV-Model & Personal Opinions & 86.3\% \\
-                    & Autobio. Memories & 82.3\% \\
-                    & Future Intentions & 69.7\% \\
         \bottomrule
-    \end{tabular} \\
+    \end{tabular} 
+\end{center}
 
+
+\begin{center}
     \small {Class-wise accuracy of the models compared.}
-
-\end{center} \\
-
-
+\end{center}
 
 \begin{center}
     \begin{tabular}{lccc}
@@ -439,9 +445,11 @@ specifically focusing on accuracy:
       \midrule
       Macro avg. Acc. & 74.7\% & 75.2\% & 73.5\% \\
       \bottomrule
-    \end{tabular} \\
+    \end{tabular}
+\end{center}
 
-    \small {Class-wise accuracy of Cross-Validated model compared.}
+\begin{center}
+    \small {Class-wise accuracy of Cross-Validated model.}
 \end{center}
 
 \section{Discussion}
