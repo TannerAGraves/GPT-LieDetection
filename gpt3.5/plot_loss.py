@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load data from the file
-file_path = 'CV1_loss.tsv'
+file_path = '300_loss.tsv'
 data = pd.read_csv(file_path, sep='\t')
 
 # Plotting the graph

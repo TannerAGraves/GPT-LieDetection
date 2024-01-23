@@ -28,7 +28,6 @@
 %%%%%%%%% TITLE
 \title{Truth or DeGPTion: Evaluating Lie Detection Capabilities of GPT-3.5 through Fine-Tuning on Personal Opinions, Autobiographical Memories, and Intentions}
 
-
 \author{
 Tanner Graves\\
 {\tt\small tanneraaron.graves@studenti.unipd.it} \\
@@ -258,11 +257,11 @@ minimizing the likelihood of verbose or indecisive responses. \\
 The hyperparameters used for fine-tuning the models are declared in 
 the tables below, together with the fine-tuning training and validation losses over the steps.
 It is important to clarify that the batch size - the number of training examples used to train a single forward and backward pass - is not something under our control when fine-tuning.
-By default, the batch size will be dynamically configured to be roughly 0.2\% of the number of examples in the training set.
+By default, the batch size will be dynamically configured to be roughly 0.2\% of the number of examples in the training set. \\
 
+\
 
-\subsubsection*{300-Model Fine-Tuning}
-
+\subsubsection*{300-Model Fine-Tuning} \\
 
 \begin{center}
 
@@ -278,15 +277,15 @@ By default, the batch size will be dynamically configured to be roughly 0.2\% of
 \end{center} 
 
 \begin{center}
-    \small {Fine-Tuning Hyperparameters of the Cross-Validated model.} 
+    \small {Fine-Tuning Hyperparameters of the Cross-Validated model.} \\
+\end{center} 
+
+\begin{center}
+\includegraphics*[scale=0.40]{img/300.png} 
 \end{center}
 
 \begin{center}
-\includegraphics*[scale=0.55]{img/training_loss_full.png} 
-\end{center}
-
-\begin{center}
-    \small {Training Loss of the 300-Model.} 
+    \small {Training Loss of the 300-Model.}
 \end{center}
 
 \subsubsection*{Full-Model Fine-Tuning}
@@ -322,9 +321,11 @@ Wanting to mitigate potential performance variation caused by the small test set
 we implemented k-fold cross-validation for another set of models.
 However, k-fold cross validation is a very resource-intensive process, and since we were using the official OpenAI API,
 we were constrained by costs. Indeed, such validation becomes very expensive: GPT-3.5's pricing is \$0.0010 per 1,000 tokens 
-for input and \$0.0020 per 1,000 tokens for output, where 1000 tokens equal about 750 words.
+for input and \$0.0020 per 1,000 tokens for output, where 1000 tokens equal about 750 words. \\
+
 Because of the cost prohibitive nature of fine tuning large language models we would be training on 3 folds. 
-Each of these folds will have 100 examples from each dataset sampled without replacement. 
+Each of these folds will have 100 examples from each dataset sampled without replacement. \\
+
 This results in 3 models that were trained on 600 total examples and validated on a set of 300 examples. 
 The OpenAI API uses the validation sets for hyperparameter selection, so a final test set is used to evaluate all models 
 of 600 examples (200 from each set). The decision to give the classes equal representation in each fold was made as 
@@ -371,7 +372,7 @@ Below, the diagram explaining the cross-validation process is presented:
 \end{center}
 
 It is evident from the above graphs that the losses of the cross-validated models do not look as smooth as expected.
-This behaviour can be attributed to the low training set size used for cross-validation, causing the gradient to be inexact.
+Similarly as for the \texttt{300-Model}, this behaviour can be attributed to the low training set size used for cross-validation, causing the gradient to be inexact.
 Nonetheless, they are still generalizing well as seen in the Validation curves.
 
 \section{Results}
