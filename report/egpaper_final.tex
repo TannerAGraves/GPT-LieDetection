@@ -270,9 +270,9 @@ By default, the batch size will be dynamically configured to be roughly 0.2\% of
         \toprule
         Hyperparameter & Value \\
         \midrule
-        Learning Rate & ??? \\
-        Epochs & ?? \\
-        Batch Size & ?? \\
+        Learning Rate & 2.0 \\
+        Epochs & 3 \\
+        Batch Size & 1 \\
         \bottomrule
     \end{tabular}
 \end{center} 
@@ -297,9 +297,9 @@ By default, the batch size will be dynamically configured to be roughly 0.2\% of
         \toprule
         Hyperparameter & Value \\
         \midrule
-        Learning Rate & ??? \\
-        Epochs & ?? \\
-        Batch Size & ?? \\
+        Learning Rate & 2.0 \\
+        Epochs & 3 \\
+        Batch Size & 13 \\
         \bottomrule
     \end{tabular} 
 \end{center} 
@@ -361,12 +361,18 @@ Below, the diagram explaining the cross-validation process is presented:
 
 % CHANGE WITH ACTUAL ONE
 \begin{center}
-\includegraphics*[scale=0.55]{img/training_loss_full.png}
+\includegraphics*[scale=0.30]{img/cv1.png}
+\includegraphics*[scale=0.30]{img/cv2.png}
+\includegraphics*[scale=0.30]{img/cv3.png}
 \end{center} 
 
 \begin{center}
-    \small {Training Loss of the Cross-Validated model.} 
+    \small {Training Loss of the Cross-Validated model(s).} 
 \end{center}
+
+It is evident from the above graphs that the losses of the cross-validated models do not look as smooth as expected.
+This behaviour can be attributed to the low training set size used for cross-validation, causing the gradient to be inexact.
+Nonetheless, they are still generalizing well as seen in the Validation curves.
 
 \section{Results}
 
@@ -494,7 +500,7 @@ implications, making the fine-tuning process problematic in terms of training co
 expecially when following best practices like performing k-fold cross-validation. \\
 
 The cross-validated \texttt{CV-Model}, instead, represents the most accurate representation of the capability of the model trained
-on the smaller dataset, improving its accuracy by an additional 9.7\%. Interestingly, this model had a way better accuracy
+on a smaller dataset, improving its accuracy by an additional 9.7\% from the \texttt{300-Model} and by 25.7\% from the base GPT-3.5. Interestingly, this model had a way better accuracy
 in the Future Intentions Dataset compared to both the \texttt{300-Model} and \texttt{Full-Model}, showing cross-validation to be particularly
 effective in this case. This variability in accuracy across different dataset sizes shows that the Future Intentions Dataset is affected the 
 most compared to the other datasets used. \\
